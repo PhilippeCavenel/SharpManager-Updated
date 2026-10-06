@@ -1,28 +1,30 @@
-CORRECTION DU TAMPON CIRCULAIRE — SHARP PC-1403
+RING BUFFER FIX — SHARP PC-1403
+English translation of the delivery notes, 6 October 2026.
 
-Cette variante corrige le problème observé avec queen's quest.bas (TAP de
-5 717 octets) : erreur lors du bloc 5, octets 257–320. Dans le firmware
-précédent, un ACK pouvait autoriser l'envoi du bloc suivant alors que le
-tampon circulaire de 256 octets était quasiment plein. L'interface USB série
-transmet 64 octets très vite et le tampon RX matériel ne peut pas attendre
-pendant que le Sharp les reçoit à environ 26 ms par octet.
+This variant fixes the problem observed with queen's quest.bas, a 5717-byte
+TAP: an error at block 5, bytes 257–320. In the previous firmware, an ACK
+could allow the next block to be sent while the 256-byte ring buffer was
+nearly full. The USB serial interface sends 64 bytes very quickly, and the
+hardware RX buffer cannot wait while the Sharp consumes them at approximately
+26 ms per byte.
 
-Désormais, l'ACK de chaque bloc (sauf le dernier) n'est envoyé que lorsqu'il
-reste au moins 64 places libres dans le tampon circulaire. Timer1 continue
-à produire le signal cassette pendant cette attente. SharpManager macOS V5.2
-attend déjà jusqu'à 20 s un ACK et reconnaît toujours l'identification
-« synchro 2s - flux continu V5 - garde 64 ».
+Each block ACK, except for the final block, is now sent only when at least
+64 free slots remain in the ring buffer. Timer1 continues generating the
+cassette signal while waiting. SharpManager macOS V5.2 already waits up to
+20 seconds for an ACK and still recognizes the identification string
+“synchro 2s - flux continu V5 - garde 64”.
 
-1. Fermer SharpManager et débrancher le Sharp de la Pro Mini avant flash.
-2. Ouvrir SharpStreamSafe/SharpStreamSafe.ino dans Arduino IDE.
-3. Choisir Arduino Pro or Pro Mini, ATmega328P 5 V / 16 MHz, port FTDI.
-4. Téléverser, reconnecter le Sharp, puis relancer SharpManager V5.2.
-5. Vérifier « garde 64 » dans la ligne de connexion ; réessayer le TAP fourni
-   dans l'archive de SharpManager V5.2.
+1. Close SharpManager and disconnect the Sharp from the Pro Mini before
+   flashing.
+2. Open SharpStreamSafe/SharpStreamSafe.ino in Arduino IDE.
+3. Select Arduino Pro or Pro Mini, ATmega328P 5 V / 16 MHz and the FTDI port.
+4. Upload, reconnect the Sharp and restart SharpManager V5.2.
+5. Check for “garde 64” in the connection line; retry the TAP supplied in
+   the SharpManager V5.2 archive.
 
-SharpStreamSafe.hex est la compilation AVR de cette variante. Le dossier
-SharpStreamPrevious contient le firmware source précédent, qui réussissait
-les petits programmes, pour revenir à cet état si nécessaire. Les essais
-matériels sur le gros programme restent à faire.
+SharpStreamSafe.hex is the AVR build of this variant. The SharpStreamPrevious
+directory contains the previous firmware sources, which loaded small
+programs successfully, so that this state can be restored if needed.
+Hardware tests with the larger program remain to be performed.
 
-Flash : 8 220 octets ; RAM statique : 682 octets sur ATmega328P.
+Flash: 8220 bytes; static RAM: 682 bytes on ATmega328P.

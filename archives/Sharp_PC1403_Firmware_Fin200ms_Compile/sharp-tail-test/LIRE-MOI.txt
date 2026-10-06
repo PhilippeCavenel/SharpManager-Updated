@@ -1,35 +1,36 @@
-ESSAI DE FIN DE CASSETTE PC-1403 — FIRMWARE COMPILÉ EXPÉRIMENTAL
+PC-1403 CASSETTE ENDING TEST — COMPILED EXPERIMENTAL FIRMWARE
+English translation of the delivery notes, 6 October 2026.
 
-Constat : dans le firmware V5, chaque dernier octet comporte deux bits de fin,
-puis le firmware émet deux bits supplémentaires (environ 8 ms de tonalité au
-total après le dernier bit de données). Cet essai ajoute encore 100 bits de
-tonalité « 1 », soit environ 200 ms, après le dernier octet. Il ne modifie ni
-le fichier TAP, ni les impulsions de chaque bit, ni le préambule de 2 secondes.
-Ce n'est pas un « blanc » silencieux : l'interface maintient une tonalité de
-repos pendant cette durée. L'hypothèse d'un défaut de fin de signal reste à
-vérifier sur le vrai PC-1403.
+Observation: in the V5 firmware, the final byte includes two trailing bits,
+then the firmware emits two additional bits, giving approximately 8 ms of
+tone after the last data bit. This experiment adds another 100 bits of
+1 tone, approximately 200 ms, after the final byte. It changes neither the
+TAP file, the pulses for each bit, nor the 2-second leader. This is not a
+silent gap: the interface maintains an idle tone during this period.
+The hypothesis of an end-of-signal problem still needs to be checked on a
+real PC-1403.
 
-SharpTailTest.hex est le firmware compilé pour ATmega328P 5 V / 16 MHz.
-Le dossier SharpTailTest contient les sources de la variante. SharpOriginalV5
-contient les sources d'origine, et ProMiniSync2s_original.hex est le fichier
-original V5 déjà fourni, pour revenir à l'état initial.
+SharpTailTest.hex is the compiled firmware for ATmega328P 5 V / 16 MHz.
+The SharpTailTest directory contains the variant sources. SharpOriginalV5
+contains the original sources, and ProMiniSync2s_original.hex is the
+previously supplied original V5 file, for restoring the initial state.
 
-TEST SI ARDUINO IDE EST INSTALLÉ SUR LE MAC
-1. Sauvegarder le programme du Sharp. Débrancher le connecteur Sharp de la
-   Pro Mini et fermer SharpManager avant le téléversement.
-2. Ouvrir SharpTailTest/SharpTailTest.ino dans Arduino IDE.
-3. Sélectionner Arduino Pro or Pro Mini, ATmega328P 5 V / 16 MHz, puis le port
-   FTDI /dev/cu.usbserial-... ; téléverser comme le firmware précédent.
-4. Reconnecter le Sharp, lancer SharpManager V3 ou V4 : la ligne d'identification
-   doit se terminer par « synchro 2s - fin 200ms ».
-5. Avec PROGRAM.tap identique et l'option « pause 50 ms » désactivée, comparer
-   plusieurs CLOAD avec le résultat du firmware V5 d'origine.
+TEST WITH ARDUINO IDE INSTALLED ON THE MAC
+1. Back up the Sharp program. Disconnect the Sharp connector from the
+   Pro Mini and close SharpManager before uploading.
+2. Open SharpTailTest/SharpTailTest.ino in Arduino IDE.
+3. Select Arduino Pro or Pro Mini, ATmega328P 5 V / 16 MHz and the
+   FTDI /dev/cu.usbserial-... port; upload as with the previous firmware.
+4. Reconnect the Sharp and launch SharpManager V3 or V4. Its identification
+   line should end with “synchro 2s - fin 200ms”.
+5. Using the same PROGRAM.tap with the “pause 50 ms” option disabled,
+   compare several CLOAD attempts with the original V5 firmware results.
 
-RETOUR : ouvrir SharpOriginalV5/SharpOriginalV5.ino et le téléverser avec les
-mêmes paramètres. La chaîne d'identification redevient « synchro 2s ».
+ROLLBACK: open SharpOriginalV5/SharpOriginalV5.ino and upload it with the
+same settings. The identification string returns to “synchro 2s”.
 
-La variante a été compilée ici avec avr-gcc 7.3 et le cœur Arduino AVR 1.8.6.
-Le programme occupe 7884 octets de flash et 391 octets de SRAM statique.
-Le .hex est fourni pour un téléversement avec un outil AVR compatible, mais
-la procédure la plus simple sur le Mac reste d'ouvrir le .ino dans Arduino
-IDE puis de téléverser. La variante n'a pas été testée sur le Sharp physique.
+The variant was built with avr-gcc 7.3 and Arduino AVR core 1.8.6.
+It uses 7884 flash bytes and 391 static SRAM bytes.
+The .hex file is provided for upload with a compatible AVR tool. On the
+Mac, the simplest procedure remains opening the .ino in Arduino IDE and
+uploading it. The variant has not been tested on a physical Sharp.

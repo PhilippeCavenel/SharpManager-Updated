@@ -1,52 +1,54 @@
-SHARPMANAGER BASIC PC-1403 — WINDOWS V5.2 (FLUX CONTINU)
+SHARPMANAGER BASIC PC-1403 — WINDOWS V5.2 (CONTINUOUS STREAMING)
+English translation of the delivery notes, 6 October 2026.
 
-Cette version Windows reprend la conversion BASIC et la réception CSAVE de
-l'édition V5, puis ajoute les changements validés dans SharpManager macOS V5.2.
+This Windows version retains BASIC conversion and CSAVE reception from V5,
+then adds the changes validated in SharpManager macOS V5.2.
 
 INSTALLATION
-1. Décompresser toute l'archive dans un NOUVEAU dossier Windows x64.
-2. Lancer SharpManagerBasicPc1403.exe. Le dossier PocketTools et toutes les
-   DLL doivent rester à côté de l'exécutable.
-3. Si Windows le demande, installer le runtime .NET 10 Desktop x64.
-4. Sélectionner le port COM du câble FTDI, puis Connect.
+1. Extract the entire archive into a NEW Windows x64 directory.
+2. Run SharpManagerBasicPc1403.exe. Keep PocketTools and all DLLs alongside
+   the executable.
+3. If Windows requests it, install the .NET 10 Desktop x64 runtime.
+4. Select the COM port of the FTDI cable, then click Connect.
 
-Le titre doit afficher « Windows V5.2 flux continu ». Les préférences restent
-dans %LOCALAPPDATA%\SharpManagerBasicPc1403\V5\settings.json, comme en V5.
+The title should display “Windows V5.2 flux continu”. Preferences remain in
+%LOCALAPPDATA%\SharpManagerBasicPc1403\V5\settings.json, as in V5.
 
-TRANSFERT AVEC LE FIRMWARE « FLUX CONTINU V5 - GARDE 64 »
-- Envoyer BASIC convertit un .bas numéroté en TAP PC-1403 avant de demander
-  CLOAD sur le Sharp. Envoyer un fichier TAP reste disponible.
-- L'application reconnaît automatiquement « flux continu V5 » dans la réponse
-  de la Pro Mini ; elle accepte alors jusqu'à 32767 octets, attend jusqu'à
-  20 secondes pour chaque ACK et affiche la progression tous les huit blocs.
-- Après le dernier ACK, elle attend ETX : celui-ci confirme la fin du signal
-  cassette. Un ACK seul signifie que les données sont dans le tampon Arduino.
-- Une erreur indique le numéro du bloc et ses octets, puis ferme la liaison.
-  Refaire Connect ; si trois SYN restent sans réponse, l'application tente
-  une remise à zéro via RTS/DTR, attend le bootloader et se resynchronise.
-  Le câble RTS vers DTR/reset doit être présent pour cette récupération.
-- Avec un ancien firmware, l'attente des blocs conserve le comportement V5.
+TRANSFER WITH THE “FLUX CONTINU V5 - GARDE 64” FIRMWARE
+- Envoyer BASIC (Send BASIC) converts a numbered .bas file to PC-1403 TAP
+  before requesting CLOAD on the Sharp. Sending an existing TAP is still
+  available.
+- The application automatically detects “flux continu V5” in the Pro Mini
+  response. It then accepts up to 32767 bytes, waits up to 20 seconds for each
+  ACK and reports progress every eight blocks.
+- After the final ACK, it waits for ETX, which confirms the end of the cassette
+  signal. An ACK alone means the data is in the Arduino buffer.
+- An error reports the block number and byte range, then closes the link.
+  Click Connect again. If three SYN attempts receive no reply, the application
+  attempts a reset through RTS/DTR, waits for the bootloader and resynchronizes.
+  The RTS-to-DTR/reset connection must be present for this recovery to work.
+- With older firmware, block waiting retains the V5 behavior.
 
 FIRMWARE
-Le firmware garde 64 déjà installé et fonctionnel sur la Pro Mini n'a pas
-besoin d'être retéléversé. La fenêtre Upload Firmware propose deux profils
-« flux continu V5 garde 64 » : 57600 (ancien bootloader) et 115200 (nouveau
-bootloader). Ne choisir que la vitesse du bootloader qui fonctionne sur votre
-Pro Mini. Le fichier Firmware/SharpStreamSafe.hex et son code Arduino sont
-également fournis. L'envoi du firmware n'est jamais automatique.
+The working “garde 64” firmware already installed on the Pro Mini does not
+need to be uploaded again. The Upload Firmware window offers two
+“flux continu V5 garde 64” profiles: 57600 (old bootloader) and 115200
+(new bootloader). Choose only the bootloader speed that works with your
+Pro Mini. Firmware/SharpStreamSafe.hex and its Arduino source code are also
+included. Firmware upload is never automatic.
 
-RECEVOIR / CSAVE
-Le menu de réception propose un BASIC lisible (.bas) ou une cassette brute
-(.tap). Si le BASIC ne peut pas être décodé, le fichier TAP peut encore être
-sauvegardé sans recommencer la réception.
+RECEIVE / CSAVE
+The receive menu offers readable BASIC (.bas) or a raw cassette file (.tap).
+If BASIC decoding fails, the TAP file can still be saved without repeating
+reception.
 
-ESSAIS FOURNIS ET LIMITES
-Le dossier Exemples contient une adaptation compacte de Queen's Quest pour
-le PC-1403 standard. Il ne s'agit pas du jeu PC-1403H intégral.
-Compilation Windows x64 et simulation : transfert de 5717 octets sur 90 blocs,
-ACK, ETX final, reconnexion, réception CSAVE et anciens firmwares. La nouvelle
-application Windows n'a pas encore été testée avec la liaison FTDI physique ni
-sur le Sharp ; le simulateur ne vérifie pas la forme d'onde électrique.
+SUPPLIED TESTS AND LIMITATIONS
+The Exemples directory contains a compact Queen's Quest adaptation for the
+standard PC-1403, rather than the full PC-1403H game.
+Windows x64 build and simulation covered a 5717-byte transfer over 90 blocks,
+ACKs, final ETX, reconnection, CSAVE reception and older firmware. The new
+Windows application has not yet been tested with the physical FTDI link or
+on the Sharp. The simulator does not verify the electrical waveform.
 
-SharpManager original : Wayne Venables / Codaris, licence Apache 2.0 (LICENSE).
-PocketTools : voir PocketTools/NOTICE.txt.
+Original SharpManager: Wayne Venables / Codaris; Apache 2.0 license (LICENSE).
+PocketTools: see PocketTools/NOTICE.txt.

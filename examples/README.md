@@ -1,10 +1,23 @@
-# Exemples BASIC et TAP
+# BASIC and TAP examples
 
-- `basic/` : Bonjour et chronomètre sous forme de sources BASIC autonomes.
-- `chronometre/` : livraison avec BASIC, TAP et instructions.
-- `tests-transfert/` : fichiers TAP de **64 et 65 octets**, leurs sources BASIC et instructions, pour tester le passage d’un bloc à deux blocs.
-- `queens-quest/` : source originale de Patrick Zumstein, traductions complètes et allégées, dernière version française 8K corrigée et adaptation anglaise 8K avec TAP.
+- `basic/`: Bonjour and stopwatch programs as standalone BASIC sources.
+- `chronometre/`: a delivery containing BASIC, TAP and instructions.
+- `tests-transfert/`: **64-byte and 65-byte** TAP files with BASIC sources
+  and instructions, for testing the transition from one block to two blocks.
+- `queens-quest/`: Patrick Zumstein's original source, full and compact
+  translations, the latest corrected French 8K version, and the English
+  8K adaptation with TAP.
 
-La dernière version française se trouve dans `queens-quest/Queens_Quest_PC1403_8K_FR_corrige.bas`. Les variantes anciennes restent disponibles pour la traçabilité. La taille du texte BASIC ne représente pas l’occupation mémoire totale sur le Sharp : le programme tokenisé et les variables doivent tenir en mémoire. Les commentaires et instructions de chaque livraison indiquent les limites connues.
+The latest French version is `queens-quest/Queens_Quest_PC1403_8K_FR_corrige.bas`.
+Earlier variants remain available for provenance. The BASIC text file size does
+not represent the total memory required on the Sharp: the tokenized program
+and its variables must both fit in memory. Each delivery's comments and
+instructions describe its known limitations.
 
-Queen’s Quest reste soumis aux droits de son auteur ; voir [les conditions de publication](../docs/PUBLICATION.md). Les TAP du jeu sont soumis à la même réserve que les sources BASIC.
+README and LIRE-MOI instructions were translated into English on 6 October 2026.
+The BASIC and TAP files themselves were not changed. Original documentation is
+preserved in Git history.
+
+Queen's Quest remains subject to its author's rights; see the
+[publication conditions](../docs/PUBLICATION.md) (in French). The same licensing
+reservation applies to the game's TAP files and BASIC sources.

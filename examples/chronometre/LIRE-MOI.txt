@@ -1,30 +1,31 @@
-CHRONOMETRE BASIC POUR SHARP PC-1403
+BASIC STOPWATCH FOR SHARP PC-1403
+English translation of the delivery notes, 6 October 2026.
 
-Fichiers : CHRONO.tap (transfert), CHRONO.bas (source modifiable).
+Files: CHRONO.tap (transfer file), CHRONO.bas (editable source).
 
 INSTALLATION
-1. Conserver la sauvegarde du programme actuel : CLOAD le remplace.
-2. SharpManager connecte au port FTDI (COM5 dans votre montage).
-3. Sharp en RUN : saisir CLOAD puis ENTER.
-4. Windows : File > Send Tape File... et choisir CHRONO.tap.
-5. Attendre la fin du chargement puis saisir RUN, ENTER.
-6. ENTER demarre le compteur a 00:00:00.
-7. BREAK interrompt. RUN puis ENTER, ENTER recommence a zero.
+1. Back up the current program: CLOAD replaces it.
+2. Connect SharpManager to the FTDI port (COM5 in this setup).
+3. On the Sharp in RUN mode, enter CLOAD and press ENTER.
+4. On Windows, select File > Send Tape File... and choose CHRONO.tap.
+5. Wait for loading to finish, then enter RUN and press ENTER.
+6. ENTER starts the counter at 00:00:00.
+7. BREAK stops it. Enter RUN, then press ENTER twice to restart from zero.
 
-PRECISION
-Cette version BASIC est demonstrative : WAIT 59 fait attendre PRINT
-pendant environ une seconde, a laquelle s'ajoute le temps des calculs.
-Elle retarde donc par rapport a un chronometre de reference.
-La precision et le fonctionnement n'ont pas ete testes sur une machine physique.
-Pour calibrer : en PRO, remplacer la ligne 30 par
+ACCURACY
+This BASIC version is a demonstration: WAIT 59 makes PRINT wait for
+approximately one second, in addition to the time required for calculations.
+It therefore runs slow compared with a reference stopwatch.
+Accuracy and operation have not been tested on a physical machine.
+To calibrate it, switch to PRO mode and replace line 30 with:
 30 H=0:M=0:S=0:W=50
-puis ajuster W en comparant avec un chronometre (diminuer W si le Sharp
-retarde, augmenter W s'il avance). La valeur 50 est un essai, pas une
-valeur calibree. Le passage de minute ajoute aussi un peu de temps.
+Then adjust W against a reference stopwatch: decrease W if the Sharp runs
+slow, or increase W if it runs fast. The value 50 is a trial value, not a
+calibrated setting. Each minute rollover also adds a little processing time.
 
-RECONSTRUIRE APRES MODIFICATION
-Avec Pocket Tools (bas2img.exe et bin2wav.exe) :
+REBUILD AFTER EDITING
+Using Pocket Tools (bas2img.exe and bin2wav.exe):
 bas2img.exe --pc=1403 CHRONO.bas CHRONO.img
 bin2wav.exe --pc=1403 --tap --name=CHRONO CHRONO.img CHRONO.tap
 
-La conversion TAP -> BASIC a ete verifiee avec Pocket Tools.
+TAP-to-BASIC conversion was checked using Pocket Tools.

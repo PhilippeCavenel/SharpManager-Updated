@@ -1,36 +1,38 @@
-# SharpManager PC-1403 · macOS V5 flux continu
+# SharpManager PC-1403 · macOS V5 continuous streaming
 
-Cette version est prévue pour le firmware SharpStream fourni dans la même archive.
-Elle conserve l'envoi TAP/BASIC et la réception CSAVE. Avec ce firmware, le Mac
-reçoit un ACK dès que chaque bloc de 64 octets est accepté dans le tampon
-circulaire. Le signal cassette est généré en parallèle par Timer1. Quand le
-tampon est vide, XIN conserve une tonalité de bits 1 ; la fin réelle des
-impulsions est annoncée par ETX. Le journal indique alors « Signal cassette
-terminé » : le Sharp ne renvoie toutefois aucune confirmation de CLOAD réussi.
+*English translation of the delivery notes, 6 October 2026.*
 
-## Construction sur le Mac mini M4
+This version is intended for the SharpStream firmware supplied in the same archive.
+It retains TAP/BASIC sending and CSAVE reception. With this firmware, the Mac
+receives an ACK as soon as each 64-byte block is accepted into the ring buffer.
+Timer1 generates the cassette signal in parallel. When the buffer is empty,
+XIN maintains a tone of 1 bits; ETX signals the actual end of the pulses.
+The log then displays “Signal cassette terminé” (cassette signal finished).
+However, the Sharp does not send confirmation that CLOAD succeeded.
 
-Installer Python 3 avec Tkinter et les outils Xcode en ligne de commande. Ouvrir
-build-macos.command après décompression complète. L'application sera créée
-dans dist/SharpManager-PC1403-V5-Flux.app. Le .app doit être compilé sur le
-Mac ; cette archive contient les sources et le script, sans binaire macOS.
+## Build on the Mac mini M4
 
-## Essai
+Install Python 3 with Tkinter and the Xcode command-line tools. After extracting
+the entire archive, open `build-macos.command`. The application is created at
+`dist/SharpManager-PC1403-V5-Flux.app`. The `.app` must be built on the Mac;
+this archive contains sources and the script, without a macOS binary.
 
-Sauvegarder d'abord le programme du Sharp. Fermer SharpManager et débrancher
-le connecteur Sharp de la Pro Mini avant de téléverser le firmware. Ouvrir
-SharpStream/SharpStream.ino dans Arduino IDE, choisir Arduino Pro or Pro Mini,
-ATmega328P 5 V / 16 MHz et le port FTDI, puis téléverser. Le fichier
-SharpStream.hex compilé est aussi fourni pour les outils AVR compatibles.
-Reconnecter le Sharp et ouvrir l'application V5. La connexion doit afficher
-« synchro 2s - flux continu V5 ». Lancer CLOAD puis envoyer le TAP, comme avant.
-Essayer le même fichier plusieurs fois et relever les réussites et erreurs 8.
-Ne pas ajouter de pause de 1 ms entre les octets dans Tape.ino.
+## Test
 
-Pour revenir à la version précédente, téléverser le firmware original depuis
-SharpOriginalV5/SharpOriginalV5.ino et réutiliser l'application macOS V4.
+Back up the Sharp program first. Close SharpManager and disconnect the Sharp
+connector from the Pro Mini before uploading the firmware. Open
+`SharpStream/SharpStream.ino` in Arduino IDE, select Arduino Pro or Pro Mini,
+ATmega328P 5 V / 16 MHz and the FTDI port, then upload. The compiled
+`SharpStream.hex` file is also supplied for compatible AVR tools.
+Reconnect the Sharp and open the V5 application. The connection should show
+“synchro 2s - flux continu V5”. Start CLOAD and send the TAP as before.
+Try the same file several times and record successful loads and ERROR 8 failures.
+Do not add a 1 ms delay between bytes in `Tape.ino`.
 
-La nouvelle émission n'a pas encore été testée avec le Sharp réel. Le firmware
-emploie Timer1 et la broche Arduino D4 (PD4) pour XIN, comme le câblage actuel. Le
-compilateur AVR a mesuré 8 144 octets de flash et 670 octets de RAM statique.
-Les sources du firmware sont issues de SharpManager (Apache 2.0).
+To return to the previous version, upload the original firmware from
+`SharpOriginalV5/SharpOriginalV5.ino` and use the macOS V4 application again.
+
+The new signal generation has not yet been tested with a real Sharp. The firmware
+uses Timer1 and Arduino pin D4 (PD4) for XIN, matching the current wiring.
+The AVR compiler reported 8,144 flash bytes and 670 static RAM bytes.
+The firmware sources are derived from SharpManager (Apache 2.0).

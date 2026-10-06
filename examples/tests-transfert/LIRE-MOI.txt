@@ -1,18 +1,19 @@
-TEST DE LA LIMITE DE 64 OCTETS — SHARP PC-1403
+64-BYTE BOUNDARY TEST — SHARP PC-1403
+English translation of the delivery notes, 6 October 2026.
 
-Les deux programmes affichent TEST OK puis terminent. Seule la longueur
-du commentaire REM change. Nom cassette et en-tete identiques.
+Both programs display TEST OK, then stop. Only the length of the REM comment
+differs. The cassette name and header are identical.
 
-1. Utiliser une seule version de SharpManager durant les deux essais.
-2. Premier essai : charger 64_octets/TEST.bas avec Envoyer BASIC.
-3. Second essai : charger 65_octets/TEST.bas avec Envoyer BASIC.
-4. Noter si CLOAD se termine ou affiche ERROR 8 pour chaque fichier.
-5. Le cas echeant, comparer avec les TEST.tap fournis via Send Tape File.
+1. Use the same SharpManager version for both tests.
+2. First test: load 64_octets/TEST.bas using Envoyer BASIC (Send BASIC).
+3. Second test: load 65_octets/TEST.bas using Envoyer BASIC (Send BASIC).
+4. For each file, record whether CLOAD finishes or displays ERROR 8.
+5. If necessary, compare with the supplied TEST.tap files using Send Tape File.
 
-Chaque chargement remplace le programme present sur le Sharp.
-Si le premier echoue, appuyer sur ON/BREAK avant de relancer CLOAD.
-Les .tap ont ete produits avec les memes Pocket Tools que le convertisseur.
-Le test a 64 octets utilise un seul bloc serie ; celui a 65 octets en utilise deux.
-Un succes/echec selon cette limite serait une indication du probleme de
-transfert entre blocs, pas encore une preuve de sa cause exacte.
-Ces transferts physiques restent a tester sur votre montage.
+Each load replaces the program currently on the Sharp.
+If the first test fails, press ON/BREAK before restarting CLOAD.
+The .tap files were created using the same Pocket Tools as the converter.
+The 64-byte test uses one serial block; the 65-byte test uses two.
+A success/failure difference at this boundary would point to an inter-block
+transfer problem, but would not yet prove its exact cause.
+These physical transfers still need to be tested on your setup.

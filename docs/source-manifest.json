@@ -579,15 +579,21 @@
       "path": "archives/Chronometre_PC1403/LIRE-MOI.txt",
       "source": "Chronometre_PC1403.zip",
       "source_entry": "LIRE-MOI.txt",
-      "bytes": 1340,
-      "sha256": "96e04014418ac68f3faf1178cff3d1fa428a0baac2f308137a2772437dbff4a5"
+      "bytes": 1421,
+      "sha256": "be5aef799776cce8fd0192f8c81f86ca3f7d5d0942210eae578dc684eff2941b",
+      "original_sha256": "96e04014418ac68f3faf1178cff3d1fa428a0baac2f308137a2772437dbff4a5",
+      "original_bytes": 1340,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "examples/chronometre/LIRE-MOI.txt",
       "source": "Chronometre_PC1403.zip",
       "source_entry": "LIRE-MOI.txt",
-      "bytes": 1340,
-      "sha256": "96e04014418ac68f3faf1178cff3d1fa428a0baac2f308137a2772437dbff4a5"
+      "bytes": 1421,
+      "sha256": "be5aef799776cce8fd0192f8c81f86ca3f7d5d0942210eae578dc684eff2941b",
+      "original_sha256": "96e04014418ac68f3faf1178cff3d1fa428a0baac2f308137a2772437dbff4a5",
+      "original_bytes": 1340,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/QUEENS_QUEST_PC1403_8K/QUEENS_QUEST_PC1403.bas",
@@ -621,15 +627,21 @@
       "path": "archives/QUEENS_QUEST_PC1403_8K/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
       "source": "QUEENS_QUEST_PC1403_8K.zip",
       "source_entry": "LIRE-MOI-QUEENS-QUEST-PC1403.txt",
-      "bytes": 1424,
-      "sha256": "df242ef295d313d69a17f0f07abada9044ecd4322510fbde8b1b21d7e1dde112"
+      "bytes": 1381,
+      "sha256": "dcb1152307068d580ebbbcd13292a717caec97d750c691a53b90aed9d800caf0",
+      "original_sha256": "df242ef295d313d69a17f0f07abada9044ecd4322510fbde8b1b21d7e1dde112",
+      "original_bytes": 1424,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "examples/queens-quest/8k-anglais/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
       "source": "QUEENS_QUEST_PC1403_8K.zip",
       "source_entry": "LIRE-MOI-QUEENS-QUEST-PC1403.txt",
-      "bytes": 1424,
-      "sha256": "df242ef295d313d69a17f0f07abada9044ecd4322510fbde8b1b21d7e1dde112"
+      "bytes": 1381,
+      "sha256": "dcb1152307068d580ebbbcd13292a717caec97d750c691a53b90aed9d800caf0",
+      "original_sha256": "df242ef295d313d69a17f0f07abada9044ecd4322510fbde8b1b21d7e1dde112",
+      "original_bytes": 1424,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LICENSE-SharpManager.txt",
@@ -642,8 +654,11 @@
       "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LIRE-MOI.md",
       "source": "SharpManager_PC1403_FluxContinu_V5.zip",
       "source_entry": "stream-release/LIRE-MOI.md",
-      "bytes": 2124,
-      "sha256": "9054c206cad7908bb323af665cb960792b7fdab31886d831b50cbdfd15b53211"
+      "bytes": 2088,
+      "sha256": "8f4959669ae662bf04a5650948362d116471893a1885ab1d529b1ef851619024",
+      "original_sha256": "9054c206cad7908bb323af665cb960792b7fdab31886d831b50cbdfd15b53211",
+      "original_bytes": 2124,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/ProMiniSync2s_original.hex",
@@ -698,8 +713,11 @@
       "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/SharpManager-macOS-V5/README.md",
       "source": "SharpManager_PC1403_FluxContinu_V5.zip",
       "source_entry": "stream-release/SharpManager-macOS-V5/README.md",
-      "bytes": 2124,
-      "sha256": "9054c206cad7908bb323af665cb960792b7fdab31886d831b50cbdfd15b53211"
+      "bytes": 2088,
+      "sha256": "8f4959669ae662bf04a5650948362d116471893a1885ab1d529b1ef851619024",
+      "original_sha256": "9054c206cad7908bb323af665cb960792b7fdab31886d831b50cbdfd15b53211",
+      "original_bytes": 2124,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/SharpManager-macOS-V5/app.py",
@@ -887,8 +905,11 @@
       "path": "archives/SharpManager_PC1403_macOS_M4_V3/README.md",
       "source": "SharpManager_PC1403_macOS_M4_V3.zip",
       "source_entry": "README.md",
-      "bytes": 2325,
-      "sha256": "51894deeda0f654ab63d66a7cb1c490de05a8e74f4bec9715193966243cb3a76"
+      "bytes": 2226,
+      "sha256": "ba39e2ce32a379cb9be301f7746efd0f563e6f2dbed2f3a764906773df1984d2",
+      "original_sha256": "51894deeda0f654ab63d66a7cb1c490de05a8e74f4bec9715193966243cb3a76",
+      "original_bytes": 2325,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_macOS_M4_V3/build-macos.command",
@@ -964,8 +985,11 @@
       "path": "archives/SharpManager_PC1403_macOS_M4_V4/README.md",
       "source": "SharpManager_PC1403_macOS_M4_V4.zip",
       "source_entry": "README.md",
-      "bytes": 2597,
-      "sha256": "1b7306c4791e9860f233a45808a6b0cc4214833ae7e6108f2a1d1ec6fbae97c5"
+      "bytes": 2538,
+      "sha256": "a5f2989a351e48e1aa06bcdb73aea43915ba6ea0a23a569a5081c1722a5c4b0f",
+      "original_sha256": "1b7306c4791e9860f233a45808a6b0cc4214833ae7e6108f2a1d1ec6fbae97c5",
+      "original_bytes": 2597,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_macOS_M4_V4/build-macos.command",
@@ -1041,8 +1065,11 @@
       "path": "archives/SharpManager_PC1403_macOS_M4_sources/README.md",
       "source": "SharpManager_PC1403_macOS_M4_sources.zip",
       "source_entry": "README.md",
-      "bytes": 2286,
-      "sha256": "87140c473069bdb664f579838b1cc6533afc175f0b3148fa33fd3ee2d0720584"
+      "bytes": 2189,
+      "sha256": "02fc875c4f669e7ccab3e89ffa0485775458efca76264e3ae2711791d5b3f371",
+      "original_sha256": "87140c473069bdb664f579838b1cc6533afc175f0b3148fa33fd3ee2d0720584",
+      "original_bytes": 2286,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_macOS_M4_sources/build-macos.command",
@@ -1139,8 +1166,11 @@
       "path": "archives/SharpManager_PC1403_macOS_V5.1_ACK20s/sharpmanager-stream-macos-v51/README.md",
       "source": "SharpManager_PC1403_macOS_V5.1_ACK20s.zip",
       "source_entry": "sharpmanager-stream-macos-v51/README.md",
-      "bytes": 1736,
-      "sha256": "d29c58884e4e2493b8ce91fe5620a327bb9f2964a5068281b268d941a0f8d89c"
+      "bytes": 1678,
+      "sha256": "695b6e4c208c3c7bf0429ef7b840f9022e1e0440d6048cd6c3a99fe7df4aa8d9",
+      "original_sha256": "d29c58884e4e2493b8ce91fe5620a327bb9f2964a5068281b268d941a0f8d89c",
+      "original_bytes": 1736,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_macOS_V5.1_ACK20s/sharpmanager-stream-macos-v51/app.py",
@@ -1258,15 +1288,21 @@
       "path": "archives/SharpManager_PC1403_macOS_V5.2_Connexion/sharpmanager-stream-macos-v52/README.md",
       "source": "SharpManager_PC1403_macOS_V5.2_Connexion.zip",
       "source_entry": "sharpmanager-stream-macos-v52/README.md",
-      "bytes": 1959,
-      "sha256": "2980c20be3dd7046909784cfae3588426085b7960b00e74704c8d99679e72246"
+      "bytes": 1909,
+      "sha256": "67e712e92e161a66e3962b2743b2c1673e68c8046b04647e6ccd85bf9118c4d2",
+      "original_sha256": "2980c20be3dd7046909784cfae3588426085b7960b00e74704c8d99679e72246",
+      "original_bytes": 1959,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "macos/README.md",
       "source": "SharpManager_PC1403_macOS_V5.2_Connexion.zip",
       "source_entry": "sharpmanager-stream-macos-v52/README.md",
-      "bytes": 1959,
-      "sha256": "2980c20be3dd7046909784cfae3588426085b7960b00e74704c8d99679e72246"
+      "bytes": 1909,
+      "sha256": "67e712e92e161a66e3962b2743b2c1673e68c8046b04647e6ccd85bf9118c4d2",
+      "original_sha256": "2980c20be3dd7046909784cfae3588426085b7960b00e74704c8d99679e72246",
+      "original_bytes": 1959,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_macOS_V5.2_Connexion/sharpmanager-stream-macos-v52/app.py",
@@ -1349,8 +1385,11 @@
       "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LIRE-MOI.txt",
       "source": "Sharp_PC1403_Firmware_Fin200ms_Compile.zip",
       "source_entry": "sharp-tail-test/LIRE-MOI.txt",
-      "bytes": 2181,
-      "sha256": "d013c655b314084bea9197ead0a8a732c5066977c8a6ae4a52b0a91177754a49"
+      "bytes": 2055,
+      "sha256": "73add2c2a095de50e3ca618ac1374110de70ae71e1bf5f6c79bc2052d20ca01c",
+      "original_sha256": "d013c655b314084bea9197ead0a8a732c5066977c8a6ae4a52b0a91177754a49",
+      "original_bytes": 2181,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/ProMiniSync2s_original.hex",
@@ -1629,8 +1668,11 @@
       "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LIRE-MOI.txt",
       "source": "Sharp_PC1403_Firmware_Fin200ms_Essai.zip",
       "source_entry": "LIRE-MOI.txt",
-      "bytes": 1949,
-      "sha256": "76eb2ac88dbd83d7cd6da2197e7967f066e13564f08ee120a8d41b95cb674397"
+      "bytes": 1873,
+      "sha256": "1055d4b36cfc2597547c85ae84cf28a2fad6dab9d990d534bf8a10e58e3ed292",
+      "original_sha256": "76eb2ac88dbd83d7cd6da2197e7967f066e13564f08ee120a8d41b95cb674397",
+      "original_bytes": 1949,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LICENSE-SharpManager.txt",
@@ -1650,15 +1692,21 @@
       "path": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LIRE-MOI.txt",
       "source": "Sharp_PC1403_Firmware_FluxContinu_Garde64.zip",
       "source_entry": "sharp-safe-release/LIRE-MOI.txt",
-      "bytes": 1599,
-      "sha256": "75497183cb780dffb5109c7ff147153456f35e757b5ed08bb00b0c756b617814"
+      "bytes": 1563,
+      "sha256": "0fe60fb5e678928d68c9e7cc7dc9fde6c6f1094532f8ae655fd73388c569647a",
+      "original_sha256": "75497183cb780dffb5109c7ff147153456f35e757b5ed08bb00b0c756b617814",
+      "original_bytes": 1599,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "firmware/LIRE-MOI.txt",
       "source": "Sharp_PC1403_Firmware_FluxContinu_Garde64.zip",
       "source_entry": "sharp-safe-release/LIRE-MOI.txt",
-      "bytes": 1599,
-      "sha256": "75497183cb780dffb5109c7ff147153456f35e757b5ed08bb00b0c756b617814"
+      "bytes": 1563,
+      "sha256": "0fe60fb5e678928d68c9e7cc7dc9fde6c6f1094532f8ae655fd73388c569647a",
+      "original_sha256": "75497183cb780dffb5109c7ff147153456f35e757b5ed08bb00b0c756b617814",
+      "original_bytes": 1599,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/SharpStreamPrevious/Ascii.h",
@@ -2518,8 +2566,11 @@
       "path": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LIRE-MOI-BASIC.txt",
       "source": "SharpManager_BASIC_PC1403_Sources.zip",
       "source_entry": "SharpManager/LIRE-MOI-BASIC.txt",
-      "bytes": 5975,
-      "sha256": "8a17f231403ef86c82e0493401215bf17b934d1a27657898c744a8e97b60153f"
+      "bytes": 5786,
+      "sha256": "c2220b2c124edcd7e5e89aa30eced0cd2b189bf385b3335466ad19b5060f5129",
+      "original_sha256": "8a17f231403ef86c82e0493401215bf17b934d1a27657898c744a8e97b60153f",
+      "original_bytes": 5975,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/README.md",
@@ -2623,8 +2674,11 @@
       "path": "archives/SharpManager_BASIC_PC1403_Windows/LIRE-MOI.txt",
       "source": "SharpManager_BASIC_PC1403_Windows.zip",
       "source_entry": "LIRE-MOI.txt",
-      "bytes": 5975,
-      "sha256": "8a17f231403ef86c82e0493401215bf17b934d1a27657898c744a8e97b60153f"
+      "bytes": 5786,
+      "sha256": "c2220b2c124edcd7e5e89aa30eced0cd2b189bf385b3335466ad19b5060f5129",
+      "original_sha256": "8a17f231403ef86c82e0493401215bf17b934d1a27657898c744a8e97b60153f",
+      "original_bytes": 5975,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_BASIC_PC1403_Windows/PocketTools/NOTICE.txt",
@@ -2784,8 +2838,11 @@
       "path": "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LIRE-MOI.txt",
       "source": "SharpManager_PC1403_Windows_V5.2_FluxContinu.zip",
       "source_entry": "sharpmanager-windows-v52/LIRE-MOI.txt",
-      "bytes": 2982,
-      "sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a"
+      "bytes": 2837,
+      "sha256": "a444236e444d09725cf20d70ef9bcb0d210c63c6785df3ff33049c4cb64b04cb",
+      "original_sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a",
+      "original_bytes": 2982,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/Exemples/QUEENS_QUEST_PC1403.bas",
@@ -3967,15 +4024,21 @@
       "path": "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
       "source": "SharpManager_PC1403_Windows_V5.2_Sources.zip",
       "source_entry": "sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
-      "bytes": 2982,
-      "sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a"
+      "bytes": 2837,
+      "sha256": "a444236e444d09725cf20d70ef9bcb0d210c63c6785df3ff33049c4cb64b04cb",
+      "original_sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a",
+      "original_bytes": 2982,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "windows/LIRE-MOI-WINDOWS-V52.txt",
       "source": "SharpManager_PC1403_Windows_V5.2_Sources.zip",
       "source_entry": "sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
-      "bytes": 2982,
-      "sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a"
+      "bytes": 2837,
+      "sha256": "a444236e444d09725cf20d70ef9bcb0d210c63c6785df3ff33049c4cb64b04cb",
+      "original_sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a",
+      "original_bytes": 2982,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "archives/Tests_Chargement_Sharp_64_65/64_octets/TEST.bas",
@@ -4037,15 +4100,21 @@
       "path": "archives/Tests_Chargement_Sharp_64_65/LIRE-MOI.txt",
       "source": "Tests_Chargement_Sharp_64_65.zip",
       "source_entry": "LIRE-MOI.txt",
-      "bytes": 1019,
-      "sha256": "941c8ddf075f7755075691df25f2e60324c2c62171af1a918d9116af07a1db2c"
+      "bytes": 1041,
+      "sha256": "b07af3518022f8c5552ac08ae943726d484dbddd2c1411cae2d672a313aec843",
+      "original_sha256": "941c8ddf075f7755075691df25f2e60324c2c62171af1a918d9116af07a1db2c",
+      "original_bytes": 1019,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "examples/tests-transfert/LIRE-MOI.txt",
       "source": "Tests_Chargement_Sharp_64_65.zip",
       "source_entry": "LIRE-MOI.txt",
-      "bytes": 1019,
-      "sha256": "941c8ddf075f7755075691df25f2e60324c2c62171af1a918d9116af07a1db2c"
+      "bytes": 1041,
+      "sha256": "b07af3518022f8c5552ac08ae943726d484dbddd2c1411cae2d672a313aec843",
+      "original_sha256": "941c8ddf075f7755075691df25f2e60324c2c62171af1a918d9116af07a1db2c",
+      "original_bytes": 1019,
+      "documentation_transformation": "English translation, 2026-10-06"
     },
     {
       "path": "examples/basic/BONJOUR.bas",
@@ -4089,5 +4158,38 @@
       "bytes": 7957,
       "sha256": "decfee5c65977d009791ee278d07cbde38b4424ecfb7f18a9fd8513f810fe0a9"
     }
-  ]
+  ],
+  "documentation_translation": {
+    "date": "2026-10-06",
+    "language": "en",
+    "original_commit": "2737fe4916bee1ff1dda7640e8b0242335d22ae7",
+    "files": [
+      "README.md",
+      "archives/Chronometre_PC1403/LIRE-MOI.txt",
+      "archives/QUEENS_QUEST_PC1403_8K/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
+      "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LIRE-MOI-BASIC.txt",
+      "archives/SharpManager_BASIC_PC1403_Windows/LIRE-MOI.txt",
+      "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LIRE-MOI.md",
+      "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/SharpManager-macOS-V5/README.md",
+      "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LIRE-MOI.txt",
+      "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
+      "archives/SharpManager_PC1403_macOS_M4_V3/README.md",
+      "archives/SharpManager_PC1403_macOS_M4_V4/README.md",
+      "archives/SharpManager_PC1403_macOS_M4_sources/README.md",
+      "archives/SharpManager_PC1403_macOS_V5.1_ACK20s/sharpmanager-stream-macos-v51/README.md",
+      "archives/SharpManager_PC1403_macOS_V5.2_Connexion/sharpmanager-stream-macos-v52/README.md",
+      "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LIRE-MOI.txt",
+      "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LIRE-MOI.txt",
+      "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LIRE-MOI.txt",
+      "archives/Tests_Chargement_Sharp_64_65/LIRE-MOI.txt",
+      "examples/README.md",
+      "examples/chronometre/LIRE-MOI.txt",
+      "examples/queens-quest/8k-anglais/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
+      "examples/tests-transfert/LIRE-MOI.txt",
+      "firmware/LIRE-MOI.txt",
+      "macos/README.md",
+      "windows/LIRE-MOI-WINDOWS-V52.txt"
+    ],
+    "note": "Original code and firmware bytes are unchanged. Original documentation is retained in Git history; original delivery checksums are retained."
+  }
 }

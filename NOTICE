@@ -8,8 +8,11 @@ This repository archives the PC-1403 adaptations developed with Philippe
 Cavenel in October 2026: macOS port, Windows BASIC conversion and serial
 protocol changes, continuous Arduino cassette streaming, and examples.
 See docs/MODIFICATIONS.md for changes and docs/PUBLICATION.md for license scope.
-Archive snapshots retain the original delivered bytes, including all existing
-copyright and attribution notices. This NOTICE does not change their licenses.
+Archive source code and firmware retain their original delivered bytes,
+including all existing copyright and attribution notices. README and LIRE-MOI
+documentation was translated into English on 6 October 2026. Its original text
+is retained in Git history; the manifest records original and current checksums.
+This NOTICE does not change any component's license.
 
 PocketTools has separate provenance and licensing; keep its bundled notices.
 Queen's Quest: Patrick Zumstein, September 2026; separate rights to confirm.

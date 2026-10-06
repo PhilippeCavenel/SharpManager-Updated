@@ -1,33 +1,35 @@
 # SharpManager-Updated
 
-Archive des sources et des exemples du projet **Sharp PC-1403** de Philippe Cavenel, au **6 octobre 2026**.
-Le projet reprend [SharpManager de Wayne Venables / Codaris](https://github.com/codaris/SharpManager).
+Source code and examples from Philippe Cavenel's **Sharp PC-1403** project, archived as of **6 October 2026**.
+This project is based on [SharpManager by Wayne Venables / Codaris](https://github.com/codaris/SharpManager).
 
-| Contenu | Révision de référence | Dossier |
+| Component | Reference version | Directory |
 | --- | --- | --- |
-| Application macOS, Python / Tkinter, Apple Silicon | V5.2 « Connexion / flux continu » | [macos](macos/) |
-| Application Windows, C# / WPF, .NET 10 | V5.2 « Flux continu » | [windows](windows/) |
-| Firmware Pro Mini ATmega328P, 5 V / 16 MHz | V5 « Flux continu — garde 64 » | [firmware](firmware/) |
-| BASIC et TAP : Bonjour, chronomètre, tests 64/65 octets, Queen’s Quest | Toutes les variantes retrouvées, dont la version française 8K corrigée | [examples](examples/) |
-| Révisions antérieures et copies des sources livrées | Mac, Windows et Arduino | [archives](archives/) |
+| macOS application, Python / Tkinter, Apple Silicon | V5.2: connection recovery and continuous streaming | [macos](macos/) |
+| Windows application, C# / WPF, .NET 10 | V5.2: continuous streaming | [windows](windows/) |
+| Pro Mini ATmega328P firmware, 5 V / 16 MHz | V5: continuous streaming with a 64-byte buffer guard | [firmware](firmware/) |
+| BASIC and TAP examples: Bonjour, stopwatch, 64/65-byte tests, Queen's Quest | All recovered variants, including the corrected French 8K version | [examples](examples/) |
+| Earlier versions and copies of delivered sources | macOS, Windows and Arduino | [archives](archives/) |
 
-## Construire et utiliser
+## Build and use
 
-- **Mac** : consulter [macos/README.md](macos/README.md), puis lancer `macos/build-macos.command` sur macOS arm64 avec Python 3 / Tkinter et les outils Xcode.
-- **Windows** : SDK .NET 10 pour construire ; exécuter `BuildWindowsBasic.bat` depuis le dossier `windows`. Le runtime .NET 10 Desktop x64 est nécessaire pour l’application publiée. Voir [les instructions V5.2](windows/LIRE-MOI-WINDOWS-V52.txt).
-- **Arduino** : ouvrir `firmware/SharpStreamSafe/SharpStreamSafe.ino` dans Arduino IDE avec le profil Pro Mini ATmega328P 5 V / 16 MHz. Voir [les instructions du firmware](firmware/LIRE-MOI.txt).
-- Les scripts de construction, les ressources, les tests existants, les sources des convertisseurs et les firmwares HEX fournis sont conservés avec les sources.
+- **Mac**: read [macos/README.md](macos/README.md), then run `macos/build-macos.command` on macOS arm64 with Python 3 / Tkinter and the Xcode command-line tools.
+- **Windows**: use the .NET 10 SDK to build; run `BuildWindowsBasic.bat` from the `windows` directory. The published application requires the .NET 10 Desktop x64 runtime. See the [V5.2 instructions](windows/LIRE-MOI-WINDOWS-V52.txt).
+- **Arduino**: open `firmware/SharpStreamSafe/SharpStreamSafe.ino` in Arduino IDE and select the Pro Mini ATmega328P 5 V / 16 MHz profile. See the [firmware instructions](firmware/LIRE-MOI.txt).
+- Build scripts, resources, existing tests, converter source code and supplied HEX firmware files are included alongside the application sources.
 
-Les transferts utilisent des blocs série de 64 octets, un tampon circulaire Arduino et Timer1 pour produire le signal cassette en continu. La V5.2 attend jusqu’à 20 secondes chaque ACK et distingue l’ACK de bloc du signal ETX de fin d’émission. Les limites et tests documentés par chaque livraison restent applicables : l’archivage ne constitue pas un nouvel essai matériel.
+Transfers use 64-byte serial blocks, an Arduino ring buffer and Timer1 to generate a continuous cassette signal. V5.2 waits up to 20 seconds for each ACK and distinguishes a block ACK from the final ETX signal. The limitations and test results documented in each delivery still apply: archiving does not constitute a new hardware test.
 
-## Traçabilité
+## Provenance and integrity
 
-Les fichiers livrés sont conservés **sans modification de contenu**. [L’inventaire](docs/INVENTAIRE.md) indique les révisions et leurs empreintes ; [le manifeste](docs/source-manifest.json) permet de vérifier chaque fichier importé. Les exécutables d’application Windows, les caches et la documentation web générée ne sont pas archivés en tant que sources ; les outils PocketTools inclus dans les paquets sources sont conservés.
+**Source code and firmware are preserved without content changes.** README and LIRE-MOI files were translated into English on 6 October 2026; their original text remains available in Git history at [the initial archive commit](https://github.com/PhilippeCavenel/SharpManager-Updated/tree/2737fe4916bee1ff1dda7640e8b0242335d22ae7). The [inventory](docs/INVENTAIRE.md) lists the deliveries and their original checksums. The [manifest](docs/source-manifest.json) records file checksums and identifies translated documentation separately.
 
-L’ancien `SharpManager_BASIC_PC1403_Sources.zip` est tronqué dans une entrée de documentation web générée. Les 394 entrées précédentes ont été récupérées avec vérification de taille et de CRC, dont les 49 fichiers `.cs`, `.py`, `.ino`, `.c` et `.h` identifiés. La récupération n’établit pas ce qui pouvait suivre l’entrée tronquée. Les archives sources Mac et Windows V5.2 sont complètes. Détails dans [l’inventaire](docs/INVENTAIRE.md).
+Windows application executables, caches and generated website documentation are excluded from the source archive. PocketTools utilities included in the source packages are retained.
 
-## Licence et publication
+The older `SharpManager_BASIC_PC1403_Sources.zip` is truncated within a generated website documentation entry. The preceding 394 entries were recovered and checked against their recorded sizes and CRCs, including 49 identified `.cs`, `.py`, `.ino`, `.c` and `.h` source files. Recovery cannot establish what may have followed the truncated entry. The macOS and Windows V5.2 source archives are complete. See the [inventory](docs/INVENTAIRE.md) for details.
 
-**Le SharpManager d’origine est sous licence Apache 2.0**, qui autorise la modification et la redistribution publique, y compris commerciale, avec les conditions de la licence. La licence et l’attribution d’origine sont conservées dans [LICENSE](LICENSE) et [NOTICE](NOTICE).
+## License and publication
 
-La licence principale ne doit pas être étendue automatiquement aux composants indépendants. **Les droits de redistribution des convertisseurs PocketTools et de Queen’s Quest restent à confirmer**. Ce dépôt d’archivage reste privé ; il faut régler ces points avant de publier son contenu intégral. [Conditions de publication détaillées](docs/PUBLICATION.md).
+**The original SharpManager is licensed under Apache 2.0**, which permits modification and public redistribution, including commercial redistribution, subject to the license conditions. The original license and attribution are retained in [LICENSE](LICENSE) and [NOTICE](NOTICE).
+
+The main license must not automatically be applied to independent components. **Redistribution rights for the PocketTools converters and Queen's Quest still need to be confirmed.** This archive repository remains private; these points must be resolved before publishing its full contents. See the [detailed publication conditions](docs/PUBLICATION.md) (in French).
