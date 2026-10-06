@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>SharpManagerBasicPc1403</AssemblyName>
+    <RuntimeFrameworkVersion>10.0.0</RuntimeFrameworkVersion>
+    <TargetFramework>net10.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Version>1.0.5.6</Version>
+    <InformationalVersion>1.0.5-basic-pc1403-windows-v5.2</InformationalVersion>
+    <Authors>Wayne Venables</Authors>
+    <Company>Codaris Computing</Company>
+    <Product>SharpManager</Product>
+    <Copyright>Copyright © 2026</Copyright>
+    <Description>Floppy drive and tape drive emulator for Sharp pocket computers.</Description>
+    <StartupObject>SharpManager.App</StartupObject>
+    <ApplicationIcon>SharpManagerAppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\SharpManagerBanner.png" />
+    <None Remove="Resources\SharpManagerIcon.png" />
+    <None Remove="Resources\Upload.png" />
+    <None Remove="SharpManagerAppIcon.ico" />
+    <None Remove="Views\Calculator.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="SharpManagerAppIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="10.0.9" />
+    <PackageReference Include="System.Management" Version="10.0.9" />
+    <PackageReference Include="ArduinoUploaderCore" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharpManager.Common\SharpManager.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Calculator.png" />
+    <Resource Include="Resources\SharpManagerBanner.png" />
+    <Resource Include="Resources\SharpManagerIcon.png" />
+    <Resource Include="Resources\Upload.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="PocketTools\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

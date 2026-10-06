@@ -1,0 +1,96 @@
+SHARPMANAGER BASIC PC-1403 — V5
+Version 1.0.5-basic-pc1403-v5 — 4 octobre 2026
+
+NOUVEAUTÉS
+- Firmware Pro Mini 5 V / 16 MHz : préambule cassette allongé de 250 à
+  1000 bits HIGH, soit environ 0,5 à 2 secondes avant le premier octet.
+  C'est un signal de synchronisation, pas un silence. La fréquence et
+  l'encodage des données restent ceux de la version d'origine.
+- Windows attend jusqu'à 8 secondes l'accusé de réception d'un bloc CLOAD.
+- Après CSAVE, choix entre un programme BASIC lisible (.bas UTF-8) et
+  la cassette brute (.tap). Le décodage BASIC est automatique pour le PC-1403.
+La cause des ERROR 8 reste incertaine : le préambule prolongé est un essai.
+Installer uniquement Windows V5 ne change pas le signal envoyé par Arduino.
+
+INSTALLATION WINDOWS
+1. Fermer les autres SharpManager.
+2. Décompresser toute l'archive dans un nouveau dossier, sans mélanger les DLL.
+3. Lancer SharpManagerBasicPc1403.exe ; vérifier BASIC PC-1403 V5 dans le titre.
+   Le dossier PocketTools doit rester à côté de l'exécutable.
+Le runtime .NET 10 Desktop pour Windows x64 est nécessaire, comme auparavant.
+Les préférences sont séparées de l'application officielle et de la V4 :
+%LOCALAPPDATA%\SharpManagerBasicPc1403\V5\settings.json
+Rechoisir le port COM de ton câble FTDI.
+
+INSTALLER LE FIRMWARE DE SYNCHRONISATION 2 SECONDES
+1. Sharp débranché pour le téléversement ; Pro Mini reliée au FTDI habituel.
+2. SharpManager déconnecté : ouvrir Upload Firmware (bouton Arduino).
+3. Choisir le port COM et l'un des deux profils ajoutés :
+   Pro Mini 5 V/16 MHz — synchro 2 s (57600) si l'ancien choix était
+   Nano R3 (Old Bootloader) ; ou le profil (115200) si c'était Nano R3.
+   Ces vitesses concernent le bootloader : la communication reste à 115200.
+4. Cliquer Upload Firmware, attendre la réussite puis fermer la fenêtre.
+5. Connect : le journal doit afficher Arduino Driver 1.3 - synchro 2s.
+Le téléversement remplace le programme de l'Arduino, pas son bootloader.
+Le câblage existant D2 à D9 et les résistances restent utilisables.
+Le fichier Firmware/ProMiniSync2s.hex est également fourni, sans bootloader.
+Pour Arduino IDE : ouvrir Firmware/Arduino/Arduino.ino, carte Arduino Pro
+or Pro Mini, processeur ATmega328P (5V, 16MHz), puis téléverser.
+Les autres profils gardent leurs firmwares d'origine. Pour revenir au
+préambule de 0,5 seconde, téléverser Nano R3 (Old Bootloader) ou Nano R3
+selon le profil qui fonctionnait auparavant sur ta Pro Mini.
+
+ENVOYER UN PROGRAMME BASIC
+1. Connecter l'interface au Sharp au repos en RUN, puis Connect dans Windows.
+2. Envoyer BASIC… : choisir le fichier .bas à lignes numérotées.
+3. Lorsque la fenêtre le demande, taper CLOAD puis ENTER sur le Sharp en RUN.
+4. Cliquer OK dans Windows, attendre la fin du chargement, puis taper RUN.
+Le programme présent sur le Sharp est remplacé : conserver sa sauvegarde.
+La conversion utilise uniquement des fichiers temporaires internes.
+Les .tap restent utilisables via Send Tape File.
+Pour comparer : charger CHRONO.bas cinq fois sans fermer SharpManager,
+puis refaire après Disconnect / Connect. Noter les échecs et garder le journal.
+
+SAUVEGARDER CSAVE EN BASIC
+1. Dans SharpManager connecté : menu File > Recevoir / CSAVE….
+2. Sur le Sharp en RUN : taper CSAVE puis ENTER.
+3. À la fin de la réception, choisir Programme BASIC (*.bas) et enregistrer.
+4. Le .bas se lit dans un éditeur Windows et peut être renvoyé avec Envoyer BASIC….
+On peut choisir Cassette Sharp (*.tap) pour conserver les données brutes.
+Si le décodage échoue, une nouvelle fenêtre propose de sauver les mêmes données
+en .tap sans refaire CSAVE. Ne pas annuler cette fenêtre pour garder la réception.
+Les données non BASIC ou les programmes protégés doivent rester en .tap.
+Le .bas restitue le programme ; la présentation d'origine et le nom cassette
+ne sont pas nécessairement conservés.
+
+VALIDATION ET LIMITES
+- Application Windows x64 compilée ; transfert simulé de 41 à 250 octets,
+  reconnexions, CSAVE, exclusivité des lecteurs et ACK retardé de 6 secondes.
+- Décodage BONJOUR et CHRONO, puis réencodage : données de programme identiques.
+  Rejet testé des formats non BASIC, checksum erroné et annulation.
+- Préférences : isolation, sauvegarde, relecture et fichier corrompu testés.
+- Firmware compilé avec Arduino AVR core 1.8.6 et avr-gcc 7.3.0 Arduino7 :
+  Flash 6016 octets sur 30720 disponibles ; RAM statique 366 sur 2048 octets.
+  Avertissements hérités du code Arduino : décalages dans WaitReadInt,
+  arguments par défaut répétés et variable d'un case. Pas de modification
+  des fonctions disque concernées dans cet essai de synchronisation.
+- Test du code réel Tape::Load avec mesures des appels de temporisation :
+  2 000 000 µs nominales de préambule, suivi des octets et bits de fin habituels.
+Les tests ne reproduisent ni l'électronique, ni la ROM Sharp, ni une utilisation
+réelle de l'interface Windows. Le montage et l'effet sur ERROR 8 restent à valider.
+
+SOURCES ET COMPILATION
+BuildWindowsBasic.bat : SDK .NET 10 ; compilation de Windows et du moteur commun.
+BuildProMiniFirmware.py : compilation du HEX pour ATmega328P / 16 MHz.
+Les sources Arduino, tests et résultats sont dans l'archive Sources.
+Les corrections de communication V4 sont conservées : un seul lecteur série,
+attente de l'ancien lecteur lors d'une reconnexion, aucun NAK après paquet valide.
+Cette version ne reprogramme pas le FTDI et n'ajoute pas de reset RTS automatique.
+
+ORIGINES ET LICENCES
+SharpManager, Wayne Venables / Codaris : Apache-2.0, voir LICENSE.
+Base : https://github.com/codaris/SharpManager (tag v1.0.5).
+Pocket Tools : exécutables Windows inchangés issus de SharpPocketToolsGUI v1.4.
+Sources, auteurs et manuel présents dans PocketTools.
+https://github.com/SilverGreen93/SharpPocketToolsGUI/releases/tag/v1.4
+Cette V5 est une version personnalisée, pas une publication officielle.

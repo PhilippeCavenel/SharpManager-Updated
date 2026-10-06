@@ -1,0 +1,28 @@
+CORRECTION DU TAMPON CIRCULAIRE — SHARP PC-1403
+
+Cette variante corrige le problème observé avec queen's quest.bas (TAP de
+5 717 octets) : erreur lors du bloc 5, octets 257–320. Dans le firmware
+précédent, un ACK pouvait autoriser l'envoi du bloc suivant alors que le
+tampon circulaire de 256 octets était quasiment plein. L'interface USB série
+transmet 64 octets très vite et le tampon RX matériel ne peut pas attendre
+pendant que le Sharp les reçoit à environ 26 ms par octet.
+
+Désormais, l'ACK de chaque bloc (sauf le dernier) n'est envoyé que lorsqu'il
+reste au moins 64 places libres dans le tampon circulaire. Timer1 continue
+à produire le signal cassette pendant cette attente. SharpManager macOS V5.2
+attend déjà jusqu'à 20 s un ACK et reconnaît toujours l'identification
+« synchro 2s - flux continu V5 - garde 64 ».
+
+1. Fermer SharpManager et débrancher le Sharp de la Pro Mini avant flash.
+2. Ouvrir SharpStreamSafe/SharpStreamSafe.ino dans Arduino IDE.
+3. Choisir Arduino Pro or Pro Mini, ATmega328P 5 V / 16 MHz, port FTDI.
+4. Téléverser, reconnecter le Sharp, puis relancer SharpManager V5.2.
+5. Vérifier « garde 64 » dans la ligne de connexion ; réessayer le TAP fourni
+   dans l'archive de SharpManager V5.2.
+
+SharpStreamSafe.hex est la compilation AVR de cette variante. Le dossier
+SharpStreamPrevious contient le firmware source précédent, qui réussissait
+les petits programmes, pour revenir à cet état si nécessaire. Les essais
+matériels sur le gros programme restent à faire.
+
+Flash : 8 220 octets ; RAM statique : 682 octets sur ATmega328P.

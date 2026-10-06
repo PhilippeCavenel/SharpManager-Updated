@@ -1,0 +1,123 @@
+V5 — validation logicielle, sans Sharp ni FTDI physiques
+
+
+build-v5-results.txt
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+
+Final publish --no-restore: exit code 0. SharpManager -> sharpmanager-windows-v5/ (win-x64).
+
+protocol-v5-results.txt
+PASS: real initialization protocol with Driver 1.3 simulator
+PASS: valid print packet is not followed by spurious NAK
+PASS: valid unsolicited SYN gets only its SYN response
+PASS: unsupported packet still receives NAK/Unexpected
+PASS: TAP 41 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 8: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 8: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 8: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 8: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 8: bytes preserved across blocks
+PASS: foreground commands and background listener never overlap their reads
+PASS: extended 8-second load timeout tolerates first block ACK delayed by 6 seconds
+PASS: CSAVE frame and escaped control bytes are received without background interference
+PASS: reconnect waits for old reader and old cleanup cannot close the new session
+PASS: rapid reconnect 1
+PASS: rapid reconnect 2
+PASS: rapid reconnect 3
+PASS: rapid reconnect 4
+PASS: rapid reconnect 5
+PASS: rapid reconnect 6
+PASS: rapid reconnect 7
+PASS: rapid reconnect 8
+PASS: rapid reconnect 9
+PASS: rapid reconnect 10
+PASS: rapid reconnect 11
+PASS: rapid reconnect 12
+PASS: rapid reconnect 13
+PASS: rapid reconnect 14
+PASS: rapid reconnect 15
+PASS: rapid reconnect 16
+PASS: rapid reconnect 17
+PASS: rapid reconnect 18
+PASS: rapid reconnect 19
+PASS: rapid reconnect 20
+PASS: reconnect after interrupted transfer drains both old command and old listener
+PASS: disconnect sends only expected cancellation
+All protocol tests passed. No FTDI or Sharp hardware was used.
+
+basic-v5-results.txt
+PASS: BASIC decode/export, unchanged source cassette, round-trip, non-BASIC rejection, cancellation and checksum validation.
+PASS: validation, tape name, native conversion, Unicode/spaced source path, missing tools, cancellation.
+
+firmware-v5-results.txt
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp: In function 'Result Manager::WaitReadInt()':
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp:162:73: warning: left shift count >= width of type [-Wshift-count-overflow]
+         return Serial.read() | (Serial.read() << 8) | (Serial.read() << 16) | (Serial.read() << 24);
+                                                                         ^~
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp:162:97: warning: left shift count >= width of type [-Wshift-count-overflow]
+         return Serial.read() | (Serial.read() << 8) | (Serial.read() << 16) | (Serial.read() << 24);
+                                                                                                 ^~
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp: In function 'Result Manager::FillBuffer(int)':
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp:352:38: warning: default argument given for parameter 1 of 'Result Manager::FillBuffer(int)' [-fpermissive]
+     Result FillBuffer(int timeout = 0)
+                                      ^
+In file included from /tmp/sharp-firmware-if1yr81m/Sketch.cpp:3:0:
+/workspace/scratch/939a1f88cf35/SharpManager/Arduino/Manager.h:127:12: note: previous specification in 'Result Manager::FillBuffer(int)' here
+     Result FillBuffer(int timeout = 0);
+            ^~~~~~~~~~
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp: In function 'Result Manager::ReadByte(int)':
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp:402:36: warning: default argument given for parameter 1 of 'Result Manager::ReadByte(int)' [-fpermissive]
+     Result ReadByte(int timeout = 0)
+                                    ^
+In file included from /tmp/sharp-firmware-if1yr81m/Sketch.cpp:3:0:
+/workspace/scratch/939a1f88cf35/SharpManager/Arduino/Manager.h:120:12: note: previous specification in 'Result Manager::ReadByte(int)' here
+     Result ReadByte(int timeout = 0);
+            ^~~~~~~~
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp: In function 'void Manager::Task()':
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp:538:13: warning: jump to case label [-fpermissive]
+             default:
+             ^~~~~~~
+/tmp/sharp-firmware-if1yr81m/Sketch.cpp:529:24: note:   crosses initialization of 'Result capture'
+                 Result capture = WaitReadByte();
+                        ^~~~~~~
+   text	   data	    bss	    dec	    hex	filename
+   5958	     58	    308	   6324	   18b4	/tmp/sharp-firmware-if1yr81m/ProMiniSync2s.elf
+Firmware: /workspace/scratch/939a1f88cf35/SharpManager/Desktop/SharpManager.Common/Firmware/ProMiniSync2s.hex
+PASS: actual Tape::Load emits a nominal 2000000-us leader before first start bit
+
+Préférences V5 : test PASS (isolation, lecture/écriture, JSON corrompu).

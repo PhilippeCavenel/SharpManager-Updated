@@ -1,0 +1,18 @@
+TEST DE LA LIMITE DE 64 OCTETS — SHARP PC-1403
+
+Les deux programmes affichent TEST OK puis terminent. Seule la longueur
+du commentaire REM change. Nom cassette et en-tete identiques.
+
+1. Utiliser une seule version de SharpManager durant les deux essais.
+2. Premier essai : charger 64_octets/TEST.bas avec Envoyer BASIC.
+3. Second essai : charger 65_octets/TEST.bas avec Envoyer BASIC.
+4. Noter si CLOAD se termine ou affiche ERROR 8 pour chaque fichier.
+5. Le cas echeant, comparer avec les TEST.tap fournis via Send Tape File.
+
+Chaque chargement remplace le programme present sur le Sharp.
+Si le premier echoue, appuyer sur ON/BREAK avant de relancer CLOAD.
+Les .tap ont ete produits avec les memes Pocket Tools que le convertisseur.
+Le test a 64 octets utilise un seul bloc serie ; celui a 65 octets en utilise deux.
+Un succes/echec selon cette limite serait une indication du probleme de
+transfert entre blocs, pas encore une preuve de sa cause exacte.
+Ces transferts physiques restent a tester sur votre montage.

@@ -1,0 +1,25 @@
+QUEEN'S QUEST - adaptation pour Sharp PC-1403 standard (8 Ko)
+
+Cette adaptation du jeu BASIC de Patrick Zumstein est une version compacte
+pour le PC-1403 standard. Le jeu original pour PC-1403H reste inchangé.
+
+Fichiers :
+  QUEENS_QUEST_PC1403.bas : source BASIC modifiable
+  QUEENS_QUEST_PC1403.tap : fichier à envoyer avec SharpManager
+
+Pour tester : charger le .tap avec SharpManager, puis lancer RUN sur le Sharp.
+Choisir la difficulté 1, 2 ou 3. Les commandes acceptent leurs deux premières
+lettres : NO, SO, EA, WE (déplacement), LO (voir la pièce), TA (ramasser),
+FI (combattre), US (boire une potion), ST (statut), MA (carte).
+
+La carte fait 7 x 7 cases, au lieu de 14 x 14. Les descriptions détaillées,
+les tables d'objets et les catégories de potions de l'original sont simplifiées.
+Le but demeure d'atteindre la case Q et de vaincre le garde pour libérer la
+reine. La carte @ indique la position du joueur ; . indique une case inconnue.
+
+La conversion en image BASIC PC-1403 puis en TAP a été vérifiée par décodage
+inverse. Taille de l'image BASIC encodée : 2299 octets. Il reste nécessaire
+de vérifier l'exécution et la mémoire disponible sur un vrai PC-1403.
+Si le Sharp affiche une erreur, relever son numéro ET le numéro de ligne,
+et préciser si elle se produit pendant CLOAD, au lancement de RUN, ou après
+une commande. La commande MEM sur le Sharp indique la mémoire encore libre.

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace(".Common", ""))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Firmware\Leonardo.hex" />
+    <None Remove="Firmware\Mega2560.hex" />
+    <None Remove="Firmware\Micro.hex" />
+    <None Remove="Firmware\Nano.hex" />
+    <None Remove="Firmware\Uno.hex" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Firmware\ProMiniSync2s.hex" />
+    <EmbeddedResource Include="Firmware\SharpStreamSafe.hex" />
+    <EmbeddedResource Include="Firmware\Leonardo.hex" />
+    <EmbeddedResource Include="Firmware\Mega2560.hex" />
+    <EmbeddedResource Include="Firmware\Micro.hex" />
+    <EmbeddedResource Include="Firmware\Nano.hex" />
+    <EmbeddedResource Include="Firmware\Uno.hex" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ArduinoUploaderCore" Version="4.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="10.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="SharpManager.ProtocolTests" />
+  </ItemGroup>
+</Project>

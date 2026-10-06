@@ -1,0 +1,15 @@
+SharpManager-Updated
+
+Original SharpManager: Copyright 2024 Wayne Venables / Codaris Computing.
+Original repository: https://github.com/codaris/SharpManager
+Original license: Apache License, Version 2.0 (see LICENSE).
+
+This repository archives the PC-1403 adaptations developed with Philippe
+Cavenel in October 2026: macOS port, Windows BASIC conversion and serial
+protocol changes, continuous Arduino cassette streaming, and examples.
+See docs/MODIFICATIONS.md for changes and docs/PUBLICATION.md for license scope.
+Archive snapshots retain the original delivered bytes, including all existing
+copyright and attribution notices. This NOTICE does not change their licenses.
+
+PocketTools has separate provenance and licensing; keep its bundled notices.
+Queen's Quest: Patrick Zumstein, September 2026; separate rights to confirm.

@@ -1,0 +1,32 @@
+ESSAI DE FIN DE CASSETTE PC-1403 — SOURCE EXPÉRIMENTAL
+
+Constat : dans le firmware V5, chaque dernier octet comporte deux bits de fin,
+puis le firmware émet deux bits supplémentaires (environ 8 ms de tonalité au
+total après le dernier bit de données). Cet essai ajoute encore 100 bits de
+tonalité « 1 », soit environ 200 ms, après le dernier octet. Il ne modifie ni
+le fichier TAP, ni les impulsions de chaque bit, ni le préambule de 2 secondes.
+Ce n'est pas un « blanc » silencieux : l'interface maintient une tonalité de
+repos pendant cette durée. L'hypothèse d'un défaut de fin de signal reste à
+vérifier sur le vrai PC-1403.
+
+Le dossier SharpTailTest contient la variante. SharpOriginalV5 contient le
+firmware source actuellement utilisé, pour revenir à l'état initial.
+
+TEST SI ARDUINO IDE EST INSTALLÉ SUR LE MAC
+1. Sauvegarder le programme du Sharp. Débrancher le connecteur Sharp de la
+   Pro Mini et fermer SharpManager avant le téléversement.
+2. Ouvrir SharpTailTest/SharpTailTest.ino dans Arduino IDE.
+3. Sélectionner Arduino Pro or Pro Mini, ATmega328P 5 V / 16 MHz, puis le port
+   FTDI /dev/cu.usbserial-... ; téléverser comme le firmware précédent.
+4. Reconnecter le Sharp, lancer SharpManager V3 ou V4 : la ligne d'identification
+   doit se terminer par « synchro 2s - fin 200ms ».
+5. Avec PROGRAM.tap identique et l'option « pause 50 ms » désactivée, comparer
+   plusieurs CLOAD avec le résultat du firmware V5 d'origine.
+
+RETOUR : ouvrir SharpOriginalV5/SharpOriginalV5.ino et le téléverser avec les
+mêmes paramètres. La chaîne d'identification redevient « synchro 2s ».
+
+Cette variante source est une modification minimale du firmware V5 déjà
+compilé et utilisé. Elle n'a pas été compilée avec une chaîne AVR dans notre
+environnement Linux actuel, ni validée sur le Sharp physique. Vérifier les
+messages de compilation et de téléversement dans Arduino IDE avant l'essai.

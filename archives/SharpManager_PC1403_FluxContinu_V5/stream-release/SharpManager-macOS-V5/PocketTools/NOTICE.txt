@@ -1,0 +1,5 @@
+Pocket Tools bundled unmodified from SharpPocketToolsGUI v1.4.
+Original authors and history are recorded in the included C sources and manual.
+Source: https://github.com/SilverGreen93/SharpPocketToolsGUI/releases/tag/v1.4
+Upstream Pocket Tools: https://peil-partner.de/ifhe.de/sharp/
+This distribution is for personal, non-commercial use.

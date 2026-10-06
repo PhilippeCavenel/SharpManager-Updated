@@ -1,0 +1,70 @@
+PASS: real initialization protocol with Driver 1.3 simulator
+PASS: valid print packet is not followed by spurious NAK
+PASS: valid unsolicited SYN gets only its SYN response
+PASS: unsupported packet still receives NAK/Unexpected
+PASS: TAP 41 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 41 bytes, pass 8: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 64 bytes, pass 8: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 65 bytes, pass 8: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 128 bytes, pass 8: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 1: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 2: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 3: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 4: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 5: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 6: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 7: bytes preserved across blocks
+PASS: TAP 250 bytes, pass 8: bytes preserved across blocks
+PASS: foreground commands and background listener never overlap their reads
+PASS: CSAVE frame and escaped control bytes are received without background interference
+PASS: reconnect waits for old reader and old cleanup cannot close the new session
+PASS: rapid reconnect 1
+PASS: rapid reconnect 2
+PASS: rapid reconnect 3
+PASS: rapid reconnect 4
+PASS: rapid reconnect 5
+PASS: rapid reconnect 6
+PASS: rapid reconnect 7
+PASS: rapid reconnect 8
+PASS: rapid reconnect 9
+PASS: rapid reconnect 10
+PASS: rapid reconnect 11
+PASS: rapid reconnect 12
+PASS: rapid reconnect 13
+PASS: rapid reconnect 14
+PASS: rapid reconnect 15
+PASS: rapid reconnect 16
+PASS: rapid reconnect 17
+PASS: rapid reconnect 18
+PASS: rapid reconnect 19
+PASS: rapid reconnect 20
+PASS: reconnect after interrupted transfer drains both old command and old listener
+PASS: disconnect sends only expected cancellation
+All protocol tests passed. No FTDI or Sharp hardware was used.

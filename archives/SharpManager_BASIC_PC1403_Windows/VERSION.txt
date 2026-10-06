@@ -1,0 +1,3 @@
+SharpManager BASIC PC-1403 V5
+Version 1.0.5.5
+Firmware ProMiniSync2s.hex SHA256: 47f80dbfd13be633c2f349face8962dc84f944f46711f323472c0f7653110d63

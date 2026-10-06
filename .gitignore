@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+bin/
+obj/
+dist/
+build/
+publish-windows/
+.DS_Store
+Thumbs.db
