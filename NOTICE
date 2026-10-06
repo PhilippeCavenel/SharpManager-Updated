@@ -7,6 +7,8 @@ Original license: Apache License, Version 2.0 (see LICENSE).
 This repository archives the PC-1403 adaptations developed with Philippe
 Cavenel in October 2026: macOS port, Windows BASIC conversion and serial
 protocol changes, continuous Arduino cassette streaming, and examples.
+An experimental Linux port was added on 6 October 2026, derived from macOS
+V5.2, with Linux USB discovery, English diagnostics and Ubuntu build scripts.
 See docs/MODIFICATIONS.md for changes and docs/PUBLICATION.md for license scope.
 Archive source code and firmware retain their original delivered bytes,
 including all existing copyright and attribution notices. README and LIRE-MOI
@@ -15,4 +17,8 @@ is retained in Git history; the manifest records original and current checksums.
 This NOTICE does not change any component's license.
 
 PocketTools has separate provenance and licensing; keep its bundled notices.
-Queen's Quest: Patrick Zumstein, September 2026; separate rights to confirm.
+Queen's Quest: Patrick Zumstein, September 2026. Published by Patrick Zumstein
+on the Facebook page "80's Sharp pocket computers"; it remains his property.
+This attribution also covers the archived translations, adaptations and TAP
+files. No redistribution license was supplied; its rights are separate from
+the SharpManager Apache 2.0 license. See examples/queens-quest/README.md.

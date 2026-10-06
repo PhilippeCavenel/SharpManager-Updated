@@ -1298,11 +1298,12 @@
       "path": "macos/README.md",
       "source": "SharpManager_PC1403_macOS_V5.2_Connexion.zip",
       "source_entry": "sharpmanager-stream-macos-v52/README.md",
-      "bytes": 1909,
-      "sha256": "67e712e92e161a66e3962b2743b2c1673e68c8046b04647e6ccd85bf9118c4d2",
+      "bytes": 2218,
+      "sha256": "3e1b536ae30d0917159d976455db18d29cf7db4c017a24886fc61cb6b9e14389",
       "original_sha256": "2980c20be3dd7046909784cfae3588426085b7960b00e74704c8d99679e72246",
       "original_bytes": 1959,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "attribution_update": "2026-10-06: Queen's Quest ownership and Facebook publication notice"
     },
     {
       "path": "archives/SharpManager_PC1403_macOS_V5.2_Connexion/sharpmanager-stream-macos-v52/app.py",
@@ -4034,11 +4035,12 @@
       "path": "windows/LIRE-MOI-WINDOWS-V52.txt",
       "source": "SharpManager_PC1403_Windows_V5.2_Sources.zip",
       "source_entry": "sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
-      "bytes": 2837,
-      "sha256": "a444236e444d09725cf20d70ef9bcb0d210c63c6785df3ff33049c4cb64b04cb",
+      "bytes": 3114,
+      "sha256": "eb8a2283d3393d71d3640c3bb9312ee457ecbc9c9b8393ebcb84d54e75a5a61d",
       "original_sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a",
       "original_bytes": 2982,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "attribution_update": "2026-10-06: Queen's Quest ownership and Facebook publication notice"
     },
     {
       "path": "archives/Tests_Chargement_Sharp_64_65/64_octets/TEST.bas",
@@ -4191,5 +4193,150 @@
       "windows/LIRE-MOI-WINDOWS-V52.txt"
     ],
     "note": "Original code and firmware bytes are unchanged. Original documentation is retained in Git history; original delivery checksums are retained."
+  },
+  "linux_port": {
+    "date": "2026-10-06",
+    "based_on": {
+      "repository": "PhilippeCavenel/SharpManager-Updated",
+      "commit": "ef5732e848ec4433bfe18b792595556c12da0c76",
+      "directory": "macos",
+      "version": "V5.2"
+    },
+    "modifications": [
+      "Linux USB serial discovery and FTDI preference",
+      "English interface and diagnostics",
+      "Linux permission guidance",
+      "Ubuntu setup, launcher and PyInstaller build scripts",
+      "BASIC conversion and real pySerial pseudo-terminal tests"
+    ],
+    "validation": {
+      "system": "Ubuntu 24.04.3 LTS",
+      "architecture": "x86_64",
+      "python": "3.12",
+      "pyserial": "3.5",
+      "pyinstaller": "6.22.3",
+      "automated_tests": 4,
+      "converter_build": true,
+      "basic_round_trip": true,
+      "serial_pseudo_terminal": true,
+      "standalone_bundle_build": true,
+      "headless_startup_diagnostic": true,
+      "desktop_interface_tested": false,
+      "physical_hardware_tested": false
+    },
+    "files": [
+      {
+        "path": "linux/.gitignore",
+        "bytes": 71,
+        "sha256": "5895e93248e8c70c6329f0409d83fdf2589e08c900c9c1bfb53fbdca42786c33",
+        "new_file": true
+      },
+      {
+        "path": "linux/app.py",
+        "bytes": 9218,
+        "sha256": "bd3621219eca2282d09a6df803eb9225477083baf8f5f0223922fa14047ff821",
+        "derived_from": "macos/app.py"
+      },
+      {
+        "path": "linux/protocol.py",
+        "bytes": 12018,
+        "sha256": "86fc9fae9be60430237551b45adc2a344bf8e9d3bca544d6ae7d04237d9ec82e",
+        "derived_from": "macos/protocol.py"
+      },
+      {
+        "path": "linux/README.md",
+        "bytes": 7333,
+        "sha256": "a9fc6346faf20a54084481391e0b5bf9d2719aa75c1560c4cae326180393cdbb",
+        "new_file": true
+      },
+      {
+        "path": "linux/requirements.txt",
+        "bytes": 14,
+        "sha256": "0b81718d1cbe8a7696e45a9388c9205272b5e345cd79d0cf1ccfb7a9fd1925e9",
+        "new_file": true
+      },
+      {
+        "path": "linux/requirements-build.txt",
+        "bytes": 38,
+        "sha256": "1341ca14cfa5b624a21b86d8efa0680de2f050b0c756d6da6d8749a5c6406e71",
+        "new_file": true
+      },
+      {
+        "path": "linux/setup-linux.sh",
+        "bytes": 1067,
+        "sha256": "435ac13adc081c808108cdc2f74bb290b52ff54b55f8308510117979beb8788f",
+        "new_file": true
+      },
+      {
+        "path": "linux/run-linux.sh",
+        "bytes": 653,
+        "sha256": "ad53c70ef12a9561a9486172a7d32d1b9a5acbbf91aca67ecc4ae91b40fe9d38",
+        "new_file": true
+      },
+      {
+        "path": "linux/build-linux.sh",
+        "bytes": 1704,
+        "sha256": "ee812330053c66fc9995527ffe2d7fee2cb74348fc992edb18941472b90e56c0",
+        "new_file": true
+      },
+      {
+        "path": "linux/LICENSE-SharpManager.txt",
+        "bytes": 11344,
+        "sha256": "dd7783540d0826f2bb642df1b077a4b22fe39ab1664edc32240ff53252e3a0e2",
+        "copied_from": "macos/LICENSE-SharpManager.txt",
+        "original_bytes_preserved": true
+      },
+      {
+        "path": "linux/PocketTools/NOTICE.txt",
+        "bytes": 339,
+        "sha256": "7075e54c212239ce8dbc6a34417606a3ba3326e795fe044a42a27e1b5241661c",
+        "copied_from": "macos/PocketTools/NOTICE.txt",
+        "original_bytes_preserved": true
+      },
+      {
+        "path": "linux/PocketTools/makefile",
+        "bytes": 273,
+        "sha256": "094ceec9e542b57be084a99b7337f3914ee1f43f122da6d1e20097144011adb5",
+        "copied_from": "macos/PocketTools/makefile",
+        "original_bytes_preserved": true
+      },
+      {
+        "path": "linux/PocketTools/bas2img_600.c",
+        "bytes": 143342,
+        "sha256": "64da1c1908842d1d8a354eb5a61b28e24031e54082d45fcb3d648d20eec9cf34",
+        "copied_from": "macos/PocketTools/bas2img_600.c",
+        "original_bytes_preserved": true
+      },
+      {
+        "path": "linux/PocketTools/bin2wav_200b.c",
+        "bytes": 186965,
+        "sha256": "c6d4f605f9872c85f38555f8f2338baee51c28537079390c0f906b14b0714b33",
+        "copied_from": "macos/PocketTools/bin2wav_200b.c",
+        "original_bytes_preserved": true
+      },
+      {
+        "path": "linux/PocketTools/wav2bin_200a.c",
+        "bytes": 356808,
+        "sha256": "129047b75dcf393cc911bf464650a22b2f432ce76d64b0cc216b6394d6f70901",
+        "copied_from": "macos/PocketTools/wav2bin_200a.c",
+        "original_bytes_preserved": true
+      },
+      {
+        "path": "linux/tests/test_linux.py",
+        "bytes": 8206,
+        "sha256": "f40434a74eb38264b2c71acfc6548a7faaab6cf599cc9888e347f7f719074233",
+        "new_file": true
+      }
+    ]
+  },
+  "attribution_update": {
+    "date": "2026-10-06",
+    "program": "Queen's Quest",
+    "author": "Patrick Zumstein",
+    "publication": "Facebook page: 80's Sharp pocket computers",
+    "publication_provenance": "Information supplied by Philippe Cavenel",
+    "ownership": "The program remains the property of Patrick Zumstein",
+    "redistribution_license": "No redistribution license supplied with the archived files",
+    "original_program_bytes_preserved": true
   }
 }

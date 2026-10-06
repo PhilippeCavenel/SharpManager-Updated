@@ -18,6 +18,8 @@ README and LIRE-MOI instructions were translated into English on 6 October 2026.
 The BASIC and TAP files themselves were not changed. Original documentation is
 preserved in Git history.
 
-Queen's Quest remains subject to its author's rights; see the
+**Queen's Quest was published by Patrick Zumstein on the Facebook page
+“80's Sharp pocket computers” and remains his property.** See the
+[game's attribution](queens-quest/README.md) and the
 [publication conditions](../docs/PUBLICATION.md) (in French). The same licensing
 reservation applies to the game's TAP files and BASIC sources.

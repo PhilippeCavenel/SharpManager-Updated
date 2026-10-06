@@ -37,3 +37,8 @@ transmission, not successful CLOAD on the Sharp.
 
 SharpManager sources are licensed under Apache 2.0. See `PocketTools/NOTICE.txt`
 for the converters' conditions.
+
+Queen's Quest was published by Patrick Zumstein on the Facebook page
+“80's Sharp pocket computers” and remains his property. This includes the
+supplied TAP adaptation. See the [game's attribution](../examples/queens-quest/README.md)
+for the separate rights applicable to the program and its adaptations.

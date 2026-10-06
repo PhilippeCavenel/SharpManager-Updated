@@ -37,6 +37,19 @@ Windows executable distributions were not copied in full: their source files, ex
 
 The original compressed archives are not duplicated in Git: their source files can be browsed directly. The manifest provides original delivery checksums and the checksum of each imported file.
 
+## New Linux port
+
+The `linux` directory was added on 6 October 2026 from the current `macos`
+V5.2 sources at commit `ef5732e848ec4433bfe18b792595556c12da0c76`. It is a new
+port, not another original delivery. Its application and protocol files record
+the modifications; the copied PocketTools C sources, makefile, NOTICE and
+SharpManager license retain their original bytes. Linux setup, launch and
+bundle scripts, English instructions and pseudo-terminal integration tests
+are included. `docs/source-manifest.json` records these files under `linux_port`.
+
+The Queen's Quest ownership notice was added to the repository documentation
+and `examples/queens-quest/README.md`; the BASIC and TAP files remain unchanged.
+
 ## English documentation update
 
 On 6 October 2026, 25 README and LIRE-MOI files were translated into English. The upstream README was already English and remains unchanged. Original documentation is retained at commit `2737fe4916bee1ff1dda7640e8b0242335d22ae7`. The source manifest keeps each translated imported file's original checksum and size in `original_sha256` and `original_bytes`; `sha256` and `bytes` describe the current English document. Code, firmware, BASIC and TAP files were not changed. Existing commands, file paths, protocol identification strings and application UI labels are preserved.
