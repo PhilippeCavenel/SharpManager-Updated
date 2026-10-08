@@ -4,7 +4,17 @@ English translation of the delivery notes, 6 October 2026.
 This Windows version retains BASIC conversion and CSAVE reception from V5,
 then adds the changes validated in SharpManager macOS V5.2.
 
-INSTALLATION
+BUILDING FROM THE GITHUB SOURCES
+The repository contains sources, not a Windows installer. Install the .NET 10
+SDK inside Windows (x64 on Intel/AMD; Arm64 on Windows ARM / Apple Silicon).
+Download: https://dotnet.microsoft.com/en-us/download/dotnet/10.0
+Close all terminal windows and reopen PowerShell. Check dotnet --version,
+then run .\BuildWindowsBasic.bat from this directory. Launch
+publish-windows\SharpManagerBasicPc1403.exe after a successful build.
+The script targets win-x64. Windows ARM also needs x64 emulation and the
+.NET 10 Desktop Runtime x64 to run that build. See README.md for details.
+
+INSTALLATION OF AN ALREADY COMPILED APPLICATION
 1. Extract the entire archive into a NEW Windows x64 directory.
 2. Run SharpManagerBasicPc1403.exe. Keep PocketTools and all DLLs alongside
    the executable.

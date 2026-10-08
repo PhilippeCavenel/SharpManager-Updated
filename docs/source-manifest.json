@@ -576,24 +576,26 @@
       "sha256": "4a892926a16125437072cd9f76b1e681fb7914a26b01f52a8c7fb05ef3cec437"
     },
     {
-      "path": "archives/Chronometre_PC1403/LIRE-MOI.txt",
+      "path": "archives/Chronometre_PC1403/LISEZ-MOI.txt",
       "source": "Chronometre_PC1403.zip",
       "source_entry": "LIRE-MOI.txt",
       "bytes": 1421,
       "sha256": "be5aef799776cce8fd0192f8c81f86ca3f7d5d0942210eae578dc684eff2941b",
       "original_sha256": "96e04014418ac68f3faf1178cff3d1fa428a0baac2f308137a2772437dbff4a5",
       "original_bytes": 1340,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/Chronometre_PC1403/LIRE-MOI.txt"
     },
     {
-      "path": "examples/chronometre/LIRE-MOI.txt",
+      "path": "examples/chronometre/LISEZ-MOI.txt",
       "source": "Chronometre_PC1403.zip",
       "source_entry": "LIRE-MOI.txt",
       "bytes": 1421,
       "sha256": "be5aef799776cce8fd0192f8c81f86ca3f7d5d0942210eae578dc684eff2941b",
       "original_sha256": "96e04014418ac68f3faf1178cff3d1fa428a0baac2f308137a2772437dbff4a5",
       "original_bytes": 1340,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "examples/chronometre/LIRE-MOI.txt"
     },
     {
       "path": "archives/QUEENS_QUEST_PC1403_8K/QUEENS_QUEST_PC1403.bas",
@@ -624,24 +626,26 @@
       "sha256": "fdde97804289766741aac6f1c630f49517a86afba523cabf86babb6eef49e9a3"
     },
     {
-      "path": "archives/QUEENS_QUEST_PC1403_8K/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
+      "path": "archives/QUEENS_QUEST_PC1403_8K/LISEZ-MOI-QUEENS-QUEST-PC1403.txt",
       "source": "QUEENS_QUEST_PC1403_8K.zip",
       "source_entry": "LIRE-MOI-QUEENS-QUEST-PC1403.txt",
       "bytes": 1381,
       "sha256": "dcb1152307068d580ebbbcd13292a717caec97d750c691a53b90aed9d800caf0",
       "original_sha256": "df242ef295d313d69a17f0f07abada9044ecd4322510fbde8b1b21d7e1dde112",
       "original_bytes": 1424,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/QUEENS_QUEST_PC1403_8K/LIRE-MOI-QUEENS-QUEST-PC1403.txt"
     },
     {
-      "path": "examples/queens-quest/8k-anglais/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
+      "path": "examples/queens-quest/8k-anglais/LISEZ-MOI-QUEENS-QUEST-PC1403.txt",
       "source": "QUEENS_QUEST_PC1403_8K.zip",
       "source_entry": "LIRE-MOI-QUEENS-QUEST-PC1403.txt",
       "bytes": 1381,
       "sha256": "dcb1152307068d580ebbbcd13292a717caec97d750c691a53b90aed9d800caf0",
       "original_sha256": "df242ef295d313d69a17f0f07abada9044ecd4322510fbde8b1b21d7e1dde112",
       "original_bytes": 1424,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "examples/queens-quest/8k-anglais/LIRE-MOI-QUEENS-QUEST-PC1403.txt"
     },
     {
       "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LICENSE-SharpManager.txt",
@@ -651,14 +655,15 @@
       "sha256": "dd7783540d0826f2bb642df1b077a4b22fe39ab1664edc32240ff53252e3a0e2"
     },
     {
-      "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LIRE-MOI.md",
+      "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LISEZ-MOI.md",
       "source": "SharpManager_PC1403_FluxContinu_V5.zip",
       "source_entry": "stream-release/LIRE-MOI.md",
       "bytes": 2088,
       "sha256": "8f4959669ae662bf04a5650948362d116471893a1885ab1d529b1ef851619024",
       "original_sha256": "9054c206cad7908bb323af665cb960792b7fdab31886d831b50cbdfd15b53211",
       "original_bytes": 2124,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LIRE-MOI.md"
     },
     {
       "path": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/ProMiniSync2s_original.hex",
@@ -1383,14 +1388,15 @@
       "sha256": "dd7783540d0826f2bb642df1b077a4b22fe39ab1664edc32240ff53252e3a0e2"
     },
     {
-      "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LIRE-MOI.txt",
+      "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LISEZ-MOI.txt",
       "source": "Sharp_PC1403_Firmware_Fin200ms_Compile.zip",
       "source_entry": "sharp-tail-test/LIRE-MOI.txt",
       "bytes": 2055,
       "sha256": "73add2c2a095de50e3ca618ac1374110de70ae71e1bf5f6c79bc2052d20ca01c",
       "original_sha256": "d013c655b314084bea9197ead0a8a732c5066977c8a6ae4a52b0a91177754a49",
       "original_bytes": 2181,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LIRE-MOI.txt"
     },
     {
       "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/ProMiniSync2s_original.hex",
@@ -1666,14 +1672,15 @@
       "sha256": "47f80dbfd13be633c2f349face8962dc84f944f46711f323472c0f7653110d63"
     },
     {
-      "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LIRE-MOI.txt",
+      "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LISEZ-MOI.txt",
       "source": "Sharp_PC1403_Firmware_Fin200ms_Essai.zip",
       "source_entry": "LIRE-MOI.txt",
       "bytes": 1873,
       "sha256": "1055d4b36cfc2597547c85ae84cf28a2fad6dab9d990d534bf8a10e58e3ed292",
       "original_sha256": "76eb2ac88dbd83d7cd6da2197e7967f066e13564f08ee120a8d41b95cb674397",
       "original_bytes": 1949,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LIRE-MOI.txt"
     },
     {
       "path": "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LICENSE-SharpManager.txt",
@@ -1690,24 +1697,26 @@
       "sha256": "dd7783540d0826f2bb642df1b077a4b22fe39ab1664edc32240ff53252e3a0e2"
     },
     {
-      "path": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LIRE-MOI.txt",
+      "path": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LISEZ-MOI.txt",
       "source": "Sharp_PC1403_Firmware_FluxContinu_Garde64.zip",
       "source_entry": "sharp-safe-release/LIRE-MOI.txt",
       "bytes": 1563,
       "sha256": "0fe60fb5e678928d68c9e7cc7dc9fde6c6f1094532f8ae655fd73388c569647a",
       "original_sha256": "75497183cb780dffb5109c7ff147153456f35e757b5ed08bb00b0c756b617814",
       "original_bytes": 1599,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LIRE-MOI.txt"
     },
     {
-      "path": "firmware/LIRE-MOI.txt",
+      "path": "firmware/LISEZ-MOI.txt",
       "source": "Sharp_PC1403_Firmware_FluxContinu_Garde64.zip",
       "source_entry": "sharp-safe-release/LIRE-MOI.txt",
       "bytes": 1563,
       "sha256": "0fe60fb5e678928d68c9e7cc7dc9fde6c6f1094532f8ae655fd73388c569647a",
       "original_sha256": "75497183cb780dffb5109c7ff147153456f35e757b5ed08bb00b0c756b617814",
       "original_bytes": 1599,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "firmware/LIRE-MOI.txt"
     },
     {
       "path": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/SharpStreamPrevious/Ascii.h",
@@ -2021,8 +2030,11 @@
       "path": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/BuildWindowsBasic.bat",
       "source": "SharpManager_BASIC_PC1403_Sources.zip",
       "source_entry": "SharpManager/BuildWindowsBasic.bat",
-      "bytes": 461,
-      "sha256": "1cbcdd07d8467cc27ae15a4afb7c315bb9e2d98b02975ae9ebef0d024d13065a"
+      "bytes": 463,
+      "sha256": "86161ebc4ade6f6d6e70911f418377fb92f44c446e839e92890c47b9eacd8d06",
+      "original_sha256": "1cbcdd07d8467cc27ae15a4afb7c315bb9e2d98b02975ae9ebef0d024d13065a",
+      "original_bytes": 461,
+      "updated_on": "2026-10-08"
     },
     {
       "path": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/Desktop/Documentation/Documentation.csproj",
@@ -2564,14 +2576,15 @@
       "sha256": "dd7783540d0826f2bb642df1b077a4b22fe39ab1664edc32240ff53252e3a0e2"
     },
     {
-      "path": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LIRE-MOI-BASIC.txt",
+      "path": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LISEZ-MOI-BASIC.txt",
       "source": "SharpManager_BASIC_PC1403_Sources.zip",
       "source_entry": "SharpManager/LIRE-MOI-BASIC.txt",
       "bytes": 5786,
       "sha256": "c2220b2c124edcd7e5e89aa30eced0cd2b189bf385b3335466ad19b5060f5129",
       "original_sha256": "8a17f231403ef86c82e0493401215bf17b934d1a27657898c744a8e97b60153f",
       "original_bytes": 5975,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LIRE-MOI-BASIC.txt"
     },
     {
       "path": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/README.md",
@@ -2672,14 +2685,15 @@
       "sha256": "dd7783540d0826f2bb642df1b077a4b22fe39ab1664edc32240ff53252e3a0e2"
     },
     {
-      "path": "archives/SharpManager_BASIC_PC1403_Windows/LIRE-MOI.txt",
+      "path": "archives/SharpManager_BASIC_PC1403_Windows/LISEZ-MOI.txt",
       "source": "SharpManager_BASIC_PC1403_Windows.zip",
       "source_entry": "LIRE-MOI.txt",
       "bytes": 5786,
       "sha256": "c2220b2c124edcd7e5e89aa30eced0cd2b189bf385b3335466ad19b5060f5129",
       "original_sha256": "8a17f231403ef86c82e0493401215bf17b934d1a27657898c744a8e97b60153f",
       "original_bytes": 5975,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/SharpManager_BASIC_PC1403_Windows/LIRE-MOI.txt"
     },
     {
       "path": "archives/SharpManager_BASIC_PC1403_Windows/PocketTools/NOTICE.txt",
@@ -2836,14 +2850,15 @@
       "sha256": "7075e54c212239ce8dbc6a34417606a3ba3326e795fe044a42a27e1b5241661c"
     },
     {
-      "path": "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LIRE-MOI.txt",
+      "path": "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LISEZ-MOI.txt",
       "source": "SharpManager_PC1403_Windows_V5.2_FluxContinu.zip",
       "source_entry": "sharpmanager-windows-v52/LIRE-MOI.txt",
       "bytes": 2837,
       "sha256": "a444236e444d09725cf20d70ef9bcb0d210c63c6785df3ff33049c4cb64b04cb",
       "original_sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a",
       "original_bytes": 2982,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LIRE-MOI.txt"
     },
     {
       "path": "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/Exemples/QUEENS_QUEST_PC1403.bas",
@@ -2863,15 +2878,21 @@
       "path": "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/BuildWindowsBasic.bat",
       "source": "SharpManager_PC1403_Windows_V5.2_Sources.zip",
       "source_entry": "sharpmanager-windows-v52-sources/BuildWindowsBasic.bat",
-      "bytes": 480,
-      "sha256": "de7d404976ebe22f7a23ae9060e0723e7b7fc43a9352ee1b063b23b58dccf96b"
+      "bytes": 482,
+      "sha256": "ca8100fe17f8ffd793a0f03e62ceabeca9585763a15bed9d394e48274e3c0fab",
+      "original_sha256": "de7d404976ebe22f7a23ae9060e0723e7b7fc43a9352ee1b063b23b58dccf96b",
+      "original_bytes": 480,
+      "updated_on": "2026-10-08"
     },
     {
       "path": "windows/BuildWindowsBasic.bat",
       "source": "SharpManager_PC1403_Windows_V5.2_Sources.zip",
       "source_entry": "sharpmanager-windows-v52-sources/BuildWindowsBasic.bat",
-      "bytes": 480,
-      "sha256": "de7d404976ebe22f7a23ae9060e0723e7b7fc43a9352ee1b063b23b58dccf96b"
+      "bytes": 1055,
+      "sha256": "fedd03faf2e65e6aae363fd5daaca2a9f5c9df4fee88bb7a1ab09912dc6eb613",
+      "original_sha256": "de7d404976ebe22f7a23ae9060e0723e7b7fc43a9352ee1b063b23b58dccf96b",
+      "original_bytes": 480,
+      "updated_on": "2026-10-08"
     },
     {
       "path": "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/tests/SettingsIsolation/SettingsIsolation.csproj",
@@ -4022,25 +4043,28 @@
       "sha256": "fabb79ef58e3f38f6b08fef8b194516b5438ef88be4791d96ffbfa19bdeedf22"
     },
     {
-      "path": "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
+      "path": "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LISEZ-MOI-WINDOWS-V52.txt",
       "source": "SharpManager_PC1403_Windows_V5.2_Sources.zip",
       "source_entry": "sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
       "bytes": 2837,
       "sha256": "a444236e444d09725cf20d70ef9bcb0d210c63c6785df3ff33049c4cb64b04cb",
       "original_sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a",
       "original_bytes": 2982,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt"
     },
     {
-      "path": "windows/LIRE-MOI-WINDOWS-V52.txt",
+      "path": "windows/LISEZ-MOI-WINDOWS-V52.txt",
       "source": "SharpManager_PC1403_Windows_V5.2_Sources.zip",
       "source_entry": "sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
-      "bytes": 3114,
-      "sha256": "eb8a2283d3393d71d3640c3bb9312ee457ecbc9c9b8393ebcb84d54e75a5a61d",
+      "bytes": 3756,
+      "sha256": "abc9dd8fd8ccf9c53b56ed77644d1fee9aaf95f13f1da9d6f7f8514d175c48d0",
       "original_sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a",
       "original_bytes": 2982,
       "documentation_transformation": "English translation, 2026-10-06",
-      "attribution_update": "2026-10-06: Queen's Quest ownership and Facebook publication notice"
+      "attribution_update": "2026-10-06: Queen's Quest ownership and Facebook publication notice",
+      "original_path": "windows/LIRE-MOI-WINDOWS-V52.txt",
+      "updated_on": "2026-10-08"
     },
     {
       "path": "archives/Tests_Chargement_Sharp_64_65/64_octets/TEST.bas",
@@ -4099,24 +4123,26 @@
       "sha256": "a1662f57d927b95c97d624ec45f01e30512fcd9f650d7cba1623c01f8ac21193"
     },
     {
-      "path": "archives/Tests_Chargement_Sharp_64_65/LIRE-MOI.txt",
+      "path": "archives/Tests_Chargement_Sharp_64_65/LISEZ-MOI.txt",
       "source": "Tests_Chargement_Sharp_64_65.zip",
       "source_entry": "LIRE-MOI.txt",
       "bytes": 1041,
       "sha256": "b07af3518022f8c5552ac08ae943726d484dbddd2c1411cae2d672a313aec843",
       "original_sha256": "941c8ddf075f7755075691df25f2e60324c2c62171af1a918d9116af07a1db2c",
       "original_bytes": 1019,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "archives/Tests_Chargement_Sharp_64_65/LIRE-MOI.txt"
     },
     {
-      "path": "examples/tests-transfert/LIRE-MOI.txt",
+      "path": "examples/tests-transfert/LISEZ-MOI.txt",
       "source": "Tests_Chargement_Sharp_64_65.zip",
       "source_entry": "LIRE-MOI.txt",
       "bytes": 1041,
       "sha256": "b07af3518022f8c5552ac08ae943726d484dbddd2c1411cae2d672a313aec843",
       "original_sha256": "941c8ddf075f7755075691df25f2e60324c2c62171af1a918d9116af07a1db2c",
       "original_bytes": 1019,
-      "documentation_transformation": "English translation, 2026-10-06"
+      "documentation_transformation": "English translation, 2026-10-06",
+      "original_path": "examples/tests-transfert/LIRE-MOI.txt"
     },
     {
       "path": "examples/basic/BONJOUR.bas",
@@ -4167,30 +4193,30 @@
     "original_commit": "2737fe4916bee1ff1dda7640e8b0242335d22ae7",
     "files": [
       "README.md",
-      "archives/Chronometre_PC1403/LIRE-MOI.txt",
-      "archives/QUEENS_QUEST_PC1403_8K/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
-      "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LIRE-MOI-BASIC.txt",
-      "archives/SharpManager_BASIC_PC1403_Windows/LIRE-MOI.txt",
-      "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LIRE-MOI.md",
+      "archives/Chronometre_PC1403/LISEZ-MOI.txt",
+      "archives/QUEENS_QUEST_PC1403_8K/LISEZ-MOI-QUEENS-QUEST-PC1403.txt",
+      "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LISEZ-MOI-BASIC.txt",
+      "archives/SharpManager_BASIC_PC1403_Windows/LISEZ-MOI.txt",
+      "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LISEZ-MOI.md",
       "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/SharpManager-macOS-V5/README.md",
-      "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LIRE-MOI.txt",
-      "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
+      "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LISEZ-MOI.txt",
+      "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LISEZ-MOI-WINDOWS-V52.txt",
       "archives/SharpManager_PC1403_macOS_M4_V3/README.md",
       "archives/SharpManager_PC1403_macOS_M4_V4/README.md",
       "archives/SharpManager_PC1403_macOS_M4_sources/README.md",
       "archives/SharpManager_PC1403_macOS_V5.1_ACK20s/sharpmanager-stream-macos-v51/README.md",
       "archives/SharpManager_PC1403_macOS_V5.2_Connexion/sharpmanager-stream-macos-v52/README.md",
-      "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LIRE-MOI.txt",
-      "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LIRE-MOI.txt",
-      "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LIRE-MOI.txt",
-      "archives/Tests_Chargement_Sharp_64_65/LIRE-MOI.txt",
+      "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LISEZ-MOI.txt",
+      "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LISEZ-MOI.txt",
+      "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LISEZ-MOI.txt",
+      "archives/Tests_Chargement_Sharp_64_65/LISEZ-MOI.txt",
       "examples/README.md",
-      "examples/chronometre/LIRE-MOI.txt",
-      "examples/queens-quest/8k-anglais/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
-      "examples/tests-transfert/LIRE-MOI.txt",
-      "firmware/LIRE-MOI.txt",
+      "examples/chronometre/LISEZ-MOI.txt",
+      "examples/queens-quest/8k-anglais/LISEZ-MOI-QUEENS-QUEST-PC1403.txt",
+      "examples/tests-transfert/LISEZ-MOI.txt",
+      "firmware/LISEZ-MOI.txt",
       "macos/README.md",
-      "windows/LIRE-MOI-WINDOWS-V52.txt"
+      "windows/LISEZ-MOI-WINDOWS-V52.txt"
     ],
     "note": "Original code and firmware bytes are unchanged. Original documentation is retained in Git history; original delivery checksums are retained."
   },
@@ -4338,5 +4364,103 @@
     "ownership": "The program remains the property of Patrick Zumstein",
     "redistribution_license": "No redistribution license supplied with the archived files",
     "original_program_bytes_preserved": true
+  },
+  "instruction_filename_update": {
+    "date": "2026-10-08",
+    "renamed_files": [
+      {
+        "from": "archives/Chronometre_PC1403/LIRE-MOI.txt",
+        "to": "archives/Chronometre_PC1403/LISEZ-MOI.txt"
+      },
+      {
+        "from": "archives/QUEENS_QUEST_PC1403_8K/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
+        "to": "archives/QUEENS_QUEST_PC1403_8K/LISEZ-MOI-QUEENS-QUEST-PC1403.txt"
+      },
+      {
+        "from": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LIRE-MOI-BASIC.txt",
+        "to": "archives/SharpManager_BASIC_PC1403_Sources/SharpManager/LISEZ-MOI-BASIC.txt"
+      },
+      {
+        "from": "archives/SharpManager_BASIC_PC1403_Windows/LIRE-MOI.txt",
+        "to": "archives/SharpManager_BASIC_PC1403_Windows/LISEZ-MOI.txt"
+      },
+      {
+        "from": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LIRE-MOI.md",
+        "to": "archives/SharpManager_PC1403_FluxContinu_V5/stream-release/LISEZ-MOI.md"
+      },
+      {
+        "from": "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LIRE-MOI.txt",
+        "to": "archives/SharpManager_PC1403_Windows_V5.2_FluxContinu/sharpmanager-windows-v52/LISEZ-MOI.txt"
+      },
+      {
+        "from": "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
+        "to": "archives/SharpManager_PC1403_Windows_V5.2_Sources/sharpmanager-windows-v52-sources/LISEZ-MOI-WINDOWS-V52.txt"
+      },
+      {
+        "from": "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LIRE-MOI.txt",
+        "to": "archives/Sharp_PC1403_Firmware_Fin200ms_Compile/sharp-tail-test/LISEZ-MOI.txt"
+      },
+      {
+        "from": "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LIRE-MOI.txt",
+        "to": "archives/Sharp_PC1403_Firmware_Fin200ms_Essai/LISEZ-MOI.txt"
+      },
+      {
+        "from": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LIRE-MOI.txt",
+        "to": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/LISEZ-MOI.txt"
+      },
+      {
+        "from": "archives/Tests_Chargement_Sharp_64_65/LIRE-MOI.txt",
+        "to": "archives/Tests_Chargement_Sharp_64_65/LISEZ-MOI.txt"
+      },
+      {
+        "from": "examples/chronometre/LIRE-MOI.txt",
+        "to": "examples/chronometre/LISEZ-MOI.txt"
+      },
+      {
+        "from": "examples/queens-quest/8k-anglais/LIRE-MOI-QUEENS-QUEST-PC1403.txt",
+        "to": "examples/queens-quest/8k-anglais/LISEZ-MOI-QUEENS-QUEST-PC1403.txt"
+      },
+      {
+        "from": "examples/tests-transfert/LIRE-MOI.txt",
+        "to": "examples/tests-transfert/LISEZ-MOI.txt"
+      },
+      {
+        "from": "firmware/LIRE-MOI.txt",
+        "to": "firmware/LISEZ-MOI.txt"
+      },
+      {
+        "from": "windows/LIRE-MOI-WINDOWS-V52.txt",
+        "to": "windows/LISEZ-MOI-WINDOWS-V52.txt"
+      }
+    ],
+    "note": "Original source_entry, original_path and original delivery checksums preserve provenance. Build references now use the renamed files."
+  },
+  "windows_setup_update": {
+    "date": "2026-10-08",
+    "guide": "windows/README.md",
+    "build_script": "windows/BuildWindowsBasic.bat",
+    "target": "win-x64",
+    "changes": [
+      "Explicit .NET 10 SDK installation and PATH refresh guidance",
+      "Windows ARM SDK and x64 Desktop Runtime guidance",
+      "Missing dotnet / .NET 10 SDK diagnostics"
+    ],
+    "files": [
+      {
+        "path": "windows/BuildWindowsBasic.bat",
+        "bytes": 1055,
+        "sha256": "fedd03faf2e65e6aae363fd5daaca2a9f5c9df4fee88bb7a1ab09912dc6eb613"
+      },
+      {
+        "path": "windows/LISEZ-MOI-WINDOWS-V52.txt",
+        "bytes": 3756,
+        "sha256": "abc9dd8fd8ccf9c53b56ed77644d1fee9aaf95f13f1da9d6f7f8514d175c48d0"
+      },
+      {
+        "path": "windows/README.md",
+        "bytes": 2816,
+        "sha256": "c99f33da757f103a34f3d1454951b195ca0cfe1e8dc92db46d03467a0138387d"
+      }
+    ]
   }
 }

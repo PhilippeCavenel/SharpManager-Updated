@@ -52,4 +52,8 @@ and `examples/queens-quest/README.md`; the BASIC and TAP files remain unchanged.
 
 ## English documentation update
 
-On 6 October 2026, 25 README and LIRE-MOI files were translated into English. The upstream README was already English and remains unchanged. Original documentation is retained at commit `2737fe4916bee1ff1dda7640e8b0242335d22ae7`. The source manifest keeps each translated imported file's original checksum and size in `original_sha256` and `original_bytes`; `sha256` and `bytes` describe the current English document. Code, firmware, BASIC and TAP files were not changed. Existing commands, file paths, protocol identification strings and application UI labels are preserved.
+On 6 October 2026, 25 README and LISEZ-MOI files were translated into English. The upstream README was already English and remains unchanged. Original documentation is retained at commit `2737fe4916bee1ff1dda7640e8b0242335d22ae7`. The source manifest keeps each translated imported file's original checksum and size in `original_sha256` and `original_bytes`; `sha256` and `bytes` describe the current English document. Code, firmware, BASIC and TAP files were not changed. Existing commands, file paths, protocol identification strings and application UI labels are preserved.
+
+## Instruction filenames and Windows setup, 8 October 2026
+
+The 16 instruction files now use `LISEZ-MOI` filenames. References and build scripts use these current names; `source_entry` and `original_path` in the manifest preserve delivery provenance. Windows SDK installation is documented in `windows/README.md`, with x64 / ARM64 guidance and a build prerequisite check. Archive build scripts were changed only to reference the renamed instruction files. Application and firmware code was not changed.

@@ -1,6 +1,6 @@
 # Modifications archivées
 
-Les fichiers de code des snapshots reproduisent les sources livrées pendant le projet ; aucune nouvelle modification fonctionnelle n’a été réalisée pour cet archivage. Le 6 octobre 2026, les README et notices LIRE-MOI ont été traduits en anglais. Leurs textes originaux restent conservés dans l’historique Git et leurs empreintes initiales dans le manifeste.
+Les fichiers de code des snapshots reproduisent les sources livrées pendant le projet ; aucune nouvelle modification fonctionnelle n’a été réalisée pour cet archivage. Le 6 octobre 2026, les README et notices LISEZ-MOI ont été traduits en anglais. Leurs textes originaux restent conservés dans l’historique Git et leurs empreintes initiales dans le manifeste.
 
 | Partie | Adaptations présentes |
 | --- | --- |
@@ -18,3 +18,5 @@ Le nouveau port Linux dispose de ses propres mentions de modification, instructi
 L’attribution de Queen’s Quest précise désormais que Patrick Zumstein a publié le programme sur la page Facebook « 80's Sharp pocket computers » et qu’il reste sa propriété. Les programmes BASIC et TAP ne sont pas modifiés. Cette mention ne vaut pas licence de redistribution.
 
 Les mentions de modification exigées par Apache 2.0 §4(b) doivent accompagner les fichiers modifiés lors d’une redistribution publique. Les fichiers de code des snapshots sont ici conservés tels que livrés pour préserver leur fidélité ; avant publication, vérifier et compléter ces mentions dans les fichiers concernés, ou préparer une branche de distribution portant ces mentions et excluant les composants aux droits non établis.
+
+Le 8 octobre 2026, les 16 notices ont été renommées en `LISEZ-MOI`, avec mise à jour des références et des scripts de compilation. Une procédure Windows détaille maintenant l’installation du SDK .NET 10, le choix x64/ARM64, la réouverture du terminal et le runtime x64 nécessaire au binaire actuel. Le script Windows courant vérifie la présence de `dotnet` et du SDK 10 avant compilation. Les scripts archivés changent uniquement leurs références aux notices renommées ; les sources de l’application et du firmware ne changent pas. Le manifeste conserve les chemins et empreintes d’origine.

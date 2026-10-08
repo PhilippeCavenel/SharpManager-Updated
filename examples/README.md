@@ -14,7 +14,7 @@ not represent the total memory required on the Sharp: the tokenized program
 and its variables must both fit in memory. Each delivery's comments and
 instructions describe its known limitations.
 
-README and LIRE-MOI instructions were translated into English on 6 October 2026.
+README and LISEZ-MOI instructions were translated into English on 6 October 2026.
 The BASIC and TAP files themselves were not changed. Original documentation is
 preserved in Git history.
 
