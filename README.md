@@ -7,7 +7,7 @@ This project is based on [SharpManager by Wayne Venables / Codaris](https://gith
 | --- | --- | --- |
 | macOS application, Python / Tkinter, Apple Silicon | V5.2: connection recovery and continuous streaming | [macos](macos/) |
 | Windows application, C# / WPF, .NET 10 | V5.2: continuous streaming | [windows](windows/) |
-| Linux application, Python / Tkinter | Experimental V5.2 port for Ubuntu testing | [linux](linux/) |
+| Linux application, Python / Tkinter | V5.2 port; Ubuntu hardware success reported on 8 October 2026 | [linux](linux/) |
 | Pro Mini ATmega328P firmware, 5 V / 16 MHz | V5: continuous streaming with a 64-byte buffer guard | [firmware](firmware/) |
 | BASIC and TAP examples: Bonjour, stopwatch, 64/65-byte tests, Queen's Quest | All recovered variants, including the corrected French 8K version | [examples](examples/) |
 | Earlier versions and copies of delivered sources | macOS, Windows and Arduino | [archives](archives/) |
@@ -16,11 +16,20 @@ This project is based on [SharpManager by Wayne Venables / Codaris](https://gith
 
 - **Mac**: read [macos/README.md](macos/README.md), then run `macos/build-macos.command` on macOS arm64 with Python 3 / Tkinter and the Xcode command-line tools.
 - **Windows**: first install the **.NET 10 SDK inside Windows**, then reopen your terminal and check `dotnet --version`. Run `BuildWindowsBasic.bat` from `windows`, then launch `publish-windows/SharpManagerBasicPc1403.exe`. See [windows/README.md](windows/README.md) for x64 / Windows ARM setup, runtime requirements and troubleshooting, and the [V5.2 transfer instructions](windows/LISEZ-MOI-WINDOWS-V52.txt).
-- **Linux / Ubuntu**: install Python 3, `python3-venv`, `python3-tk`, GCC and Make, then run `./setup-linux.sh` and `./run-linux.sh` from `linux`. See [linux/README.md](linux/README.md) for USB permissions, the optional standalone build and the hardware test procedure. Software checks were performed on Ubuntu 24.04.3 x86_64; desktop and physical Sharp tests are pending.
+- **Linux / Ubuntu**: install Python 3, `python3-venv`, `python3-tk`, GCC and Make, then run `./setup-linux.sh` and `./run-linux.sh` from `linux`. See [linux/README.md](linux/README.md) for USB permissions, the optional standalone build and the hardware test procedure. Software checks were performed on Ubuntu 24.04.3 x86_64; user-reported hardware success on 8 October 2026 is recorded in the [validation report](docs/VALIDATION-2026-10-08.md).
 - **Arduino**: open `firmware/SharpStreamSafe/SharpStreamSafe.ino` in Arduino IDE and select the Pro Mini ATmega328P 5 V / 16 MHz profile. See the [firmware instructions](firmware/LISEZ-MOI.txt).
 - Build scripts, resources, existing tests, converter source code and supplied HEX firmware files are included alongside the application sources.
 
 Transfers use 64-byte serial blocks, an Arduino ring buffer and Timer1 to generate a continuous cassette signal. V5.2 waits up to 20 seconds for each ACK and distinguishes a block ACK from the final ETX signal. The limitations and test results documented in each delivery still apply: archiving does not constitute a new hardware test.
+
+## Hardware validation update - 8 October 2026
+
+Philippe Cavenel reports successful operation on **macOS, Ubuntu and Windows
+under Parallels** with his FTDI / Pro Mini / PC-1403 setup. See the
+[validation report](docs/VALIDATION-2026-10-08.md) for the evidence scope and
+the Windows PATH / FTDI ARM64 setup steps. Exact OS builds and operation-by-
+operation results were not supplied; earlier software tests remain documented
+separately.
 
 ## Provenance and integrity
 

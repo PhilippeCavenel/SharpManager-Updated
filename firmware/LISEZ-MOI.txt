@@ -28,3 +28,9 @@ programs successfully, so that this state can be restored if needed.
 Hardware tests with the larger program remain to be performed.
 
 Flash: 8220 bytes; static RAM: 682 bytes on ATmega328P.
+
+UPDATE - 8 OCTOBER 2026
+Philippe Cavenel reports successful use of his physical FTDI / Pro Mini /
+PC-1403 setup from macOS, Ubuntu and Windows. Keep the working firmware
+when changing host platform. No new firmware was produced by this update.
+See ../docs/VALIDATION-2026-10-08.md for the reported test scope.

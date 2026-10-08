@@ -22,3 +22,7 @@ or permission from the rights holder. See the
 
 The BASIC and TAP contents, including the original author credits, were not
 changed when this attribution notice was added.
+
+## Provenance update - 8 October 2026
+
+Philippe Cavenel confirms that Patrick Zumstein published the program on a public Facebook page without an accompanying licence. This records the publication context; it does not supply a redistribution licence or place the game in the public domain. Original credits and the separate-rights notice above remain applicable.

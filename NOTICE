@@ -11,7 +11,7 @@ An experimental Linux port was added on 6 October 2026, derived from macOS
 V5.2, with Linux USB discovery, English diagnostics and Ubuntu build scripts.
 See docs/MODIFICATIONS.md for changes and docs/PUBLICATION.md for license scope.
 Archive source code and firmware retain their original delivered bytes,
-including all existing copyright and attribution notices. README and LIRE-MOI
+including all existing copyright and attribution notices. README and LISEZ-MOI
 documentation was translated into English on 6 October 2026. Its original text
 is retained in Git history; the manifest records original and current checksums.
 This NOTICE does not change any component's license.
@@ -22,3 +22,10 @@ on the Facebook page "80's Sharp pocket computers"; it remains his property.
 This attribution also covers the archived translations, adaptations and TAP
 files. No redistribution license was supplied; its rights are separate from
 the SharpManager Apache 2.0 license. See examples/queens-quest/README.md.
+
+On 8 October 2026 Philippe Cavenel reported successful hardware operation
+on macOS, Ubuntu and Windows under Parallels. See the dated validation
+report; Windows installation documentation records PATH and ARM64 FTDI
+driver troubleshooting. PocketTools remains unmodified. Queen's Quest was
+published without an accompanying licence on a public Facebook page,
+according to Philippe Cavenel. These facts do not alter component licences.

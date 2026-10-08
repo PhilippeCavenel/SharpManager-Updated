@@ -34,3 +34,23 @@ Provenance PocketTools conservée dans les paquets :
 Le port Linux ajouté le 6 octobre 2026 reprend le code SharpManager sous Apache 2.0 avec des mentions de modification dans les fichiers Python adaptés. Les sources et notices PocketTools copiées dans `linux/PocketTools` conservent leurs droits indépendants.
 
 La question de la publication concerne aussi les copies historiques, les TAP du jeu et les composants embarqués dans les dossiers macOS / Windows / Linux. Exclure seulement un dossier principal ne suffit pas si des copies restent dans les archives ou dans l’historique accessible. Le dépôt reste privé à l’issue de cet archivage ; aucun changement de visibilité n’est effectué.
+
+## Dernières informations - 8 octobre 2026
+
+- Philippe Cavenel confirme le fonctionnement sur macOS, Ubuntu et Windows
+  sous Parallels avec son matériel FTDI / Pro Mini / PC-1403. Le rapport
+  [VALIDATION-2026-10-08.md](VALIDATION-2026-10-08.md) distingue cette
+  confirmation des tests automatisés précédents.
+- **PocketTools n’a pas été modifié.** Cette absence de modification est
+  conservée dans la provenance ; elle ne définit pas à elle seule les droits
+  de redistribution des fichiers d’origine.
+- **Queen’s Quest a été publié sans licence sur une page Facebook publique**,
+  selon Philippe Cavenel. L’auteur reste Patrick Zumstein et les crédits sont
+  conservés. Aucune autorisation supplémentaire de redistribution n’a été
+  fournie dans cette mise à jour ; l’accessibilité publique ne constitue pas
+  une licence de redistribution ou une mise dans le domaine public.
+- Les instructions Windows sont actualisées : SDK .NET 10, PATH, choix
+  ARM64/x64 et pilote FTDI ARM64 dans Parallels.
+
+Cette mise à jour documentaire ne modifie ni les licences, ni la visibilité
+du dépôt, ni les sources de l’application, du firmware ou de PocketTools.

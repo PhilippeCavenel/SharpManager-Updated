@@ -1,6 +1,6 @@
 # SharpManager PC-1403 for Linux
 
-Experimental **Linux V5.2** port, added on 6 October 2026 from the archived
+**Linux V5.2** port, added on 6 October 2026 from the archived
 macOS V5.2 Python / Tkinter application. Intended for testing on Ubuntu Desktop
 with the FTDI cable, Pro Mini and Sharp PC-1403 used by this project.
 
@@ -128,8 +128,9 @@ Checks performed on **Ubuntu 24.04.3, x86_64** on 6 October 2026:
 - The PyInstaller directory bundle built successfully. Headless startup
   reports that a graphical desktop session is required.
 
-**Pending:** visual checks in an Ubuntu desktop session and physical FTDI /
-Pro Mini / PC-1403 tests. Serial simulations do not verify reset wiring,
+**Status at the original 6 October delivery:** visual checks and physical FTDI / Pro Mini / PC-1403 tests were pending.
+
+**Update, 8 October 2026:** Philippe Cavenel reports that the Ubuntu application works with his physical setup, as do the Mac and Windows versions. Exact OS builds and per-operation results were not supplied; see [the validation report](../docs/VALIDATION-2026-10-08.md). Serial simulations do not verify reset wiring,
 cassette waveforms, timing on the Sharp or USB-driver behavior.
 
 ## Attribution and licensing

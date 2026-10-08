@@ -66,3 +66,10 @@ Queen's Quest was published by Patrick Zumstein on the Facebook page
 "80's Sharp pocket computers" and remains his property. The game's rights
 are separate from SharpManager's Apache 2.0 license. See
 ../examples/queens-quest/README.md for attribution and redistribution terms.
+
+UPDATE - 8 OCTOBER 2026
+Philippe Cavenel reports successful operation on Windows under Parallels,
+as on macOS and Ubuntu, after resolving dotnet PATH and FTDI ARM64 driver
+installation. The pending-hardware statement above describes the original
+delivery. See README.md and ../docs/VALIDATION-2026-10-08.md for current
+installation steps and the limits of this user-reported validation.

@@ -42,3 +42,7 @@ Queen's Quest was published by Patrick Zumstein on the Facebook page
 “80's Sharp pocket computers” and remains his property. This includes the
 supplied TAP adaptation. See the [game's attribution](../examples/queens-quest/README.md)
 for the separate rights applicable to the program and its adaptations.
+
+## Hardware update - 8 October 2026
+
+Philippe Cavenel reports that the application rebuilt from this repository now connects and works with his physical FTDI / Pro Mini / PC-1403 setup. The cause of the initial connection failure was not isolated. Mac, Ubuntu and Windows results and their scope are recorded in [the validation report](../docs/VALIDATION-2026-10-08.md).

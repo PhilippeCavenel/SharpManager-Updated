@@ -1303,12 +1303,13 @@
       "path": "macos/README.md",
       "source": "SharpManager_PC1403_macOS_V5.2_Connexion.zip",
       "source_entry": "sharpmanager-stream-macos-v52/README.md",
-      "bytes": 2218,
-      "sha256": "3e1b536ae30d0917159d976455db18d29cf7db4c017a24886fc61cb6b9e14389",
+      "bytes": 2590,
+      "sha256": "d71f458e21aaae67854d350e45146275fd9918f3342db86f64d4bf47ca8e4240",
       "original_sha256": "2980c20be3dd7046909784cfae3588426085b7960b00e74704c8d99679e72246",
       "original_bytes": 1959,
       "documentation_transformation": "English translation, 2026-10-06",
-      "attribution_update": "2026-10-06: Queen's Quest ownership and Facebook publication notice"
+      "attribution_update": "2026-10-06: Queen's Quest ownership and Facebook publication notice",
+      "updated_on": "2026-10-08"
     },
     {
       "path": "archives/SharpManager_PC1403_macOS_V5.2_Connexion/sharpmanager-stream-macos-v52/app.py",
@@ -1711,12 +1712,13 @@
       "path": "firmware/LISEZ-MOI.txt",
       "source": "Sharp_PC1403_Firmware_FluxContinu_Garde64.zip",
       "source_entry": "sharp-safe-release/LIRE-MOI.txt",
-      "bytes": 1563,
-      "sha256": "0fe60fb5e678928d68c9e7cc7dc9fde6c6f1094532f8ae655fd73388c569647a",
+      "bytes": 1874,
+      "sha256": "593369667e90db4eab579c99199edabf03e21ebe5db0b2a2659e5e056102a0a8",
       "original_sha256": "75497183cb780dffb5109c7ff147153456f35e757b5ed08bb00b0c756b617814",
       "original_bytes": 1599,
       "documentation_transformation": "English translation, 2026-10-06",
-      "original_path": "firmware/LIRE-MOI.txt"
+      "original_path": "firmware/LIRE-MOI.txt",
+      "updated_on": "2026-10-08"
     },
     {
       "path": "archives/Sharp_PC1403_Firmware_FluxContinu_Garde64/sharp-safe-release/SharpStreamPrevious/Ascii.h",
@@ -4057,8 +4059,8 @@
       "path": "windows/LISEZ-MOI-WINDOWS-V52.txt",
       "source": "SharpManager_PC1403_Windows_V5.2_Sources.zip",
       "source_entry": "sharpmanager-windows-v52-sources/LIRE-MOI-WINDOWS-V52.txt",
-      "bytes": 3756,
-      "sha256": "abc9dd8fd8ccf9c53b56ed77644d1fee9aaf95f13f1da9d6f7f8514d175c48d0",
+      "bytes": 4144,
+      "sha256": "45c56128949db46ecaad2e3ecf1155cfa89e81789f8ddfdc2e4895b6a6a0c700",
       "original_sha256": "61e0ca327b667e29fd6ebe86f70d39f9a34dc4c3d813b640ffba0f72ef66362a",
       "original_bytes": 2982,
       "documentation_transformation": "English translation, 2026-10-06",
@@ -4271,9 +4273,12 @@
       },
       {
         "path": "linux/README.md",
-        "bytes": 7333,
-        "sha256": "a9fc6346faf20a54084481391e0b5bf9d2719aa75c1560c4cae326180393cdbb",
-        "new_file": true
+        "bytes": 7611,
+        "sha256": "4e0c32ab9ac0f5085971c79b58a0187bca7150931a85299b4a9eb614ddb100c0",
+        "new_file": true,
+        "original_sha256": "a9fc6346faf20a54084481391e0b5bf9d2719aa75c1560c4cae326180393cdbb",
+        "original_bytes": 7333,
+        "updated_on": "2026-10-08"
       },
       {
         "path": "linux/requirements.txt",
@@ -4453,13 +4458,82 @@
       },
       {
         "path": "windows/LISEZ-MOI-WINDOWS-V52.txt",
-        "bytes": 3756,
-        "sha256": "abc9dd8fd8ccf9c53b56ed77644d1fee9aaf95f13f1da9d6f7f8514d175c48d0"
+        "bytes": 4144,
+        "sha256": "45c56128949db46ecaad2e3ecf1155cfa89e81789f8ddfdc2e4895b6a6a0c700"
       },
       {
         "path": "windows/README.md",
-        "bytes": 2816,
-        "sha256": "c99f33da757f103a34f3d1454951b195ca0cfe1e8dc92db46d03467a0138387d"
+        "bytes": 5619,
+        "sha256": "0a063d4ce9643206e6c9e3bfb5c3ff79296e382e029d47c2b628cc8e1e4fc5af"
+      }
+    ]
+  },
+  "hardware_validation_update": {
+    "date": "2026-10-08",
+    "reported_by": "Philippe Cavenel",
+    "platforms": [
+      "macOS",
+      "Ubuntu",
+      "Windows under Parallels"
+    ],
+    "result": "User reports successful operation with his physical setup on all three platforms",
+    "scope": "Exact OS builds and operation-by-operation test results not provided; no new automated test run",
+    "report": "docs/VALIDATION-2026-10-08.md",
+    "files": [
+      {
+        "path": "windows/README.md",
+        "bytes": 5619,
+        "sha256": "0a063d4ce9643206e6c9e3bfb5c3ff79296e382e029d47c2b628cc8e1e4fc5af"
+      },
+      {
+        "path": "docs/PUBLICATION.md",
+        "bytes": 5535,
+        "sha256": "e5322b97f71f99b3764f0818ccae91f8c9dde8fb69fb3d363b3aba07e17cf399"
+      },
+      {
+        "path": "examples/queens-quest/README.md",
+        "bytes": 1605,
+        "sha256": "340569121d0dcec46cff2b1ffc60db22b9d7ce1a5763d796a317d5dc579f3577"
+      },
+      {
+        "path": "linux/README.md",
+        "bytes": 7611,
+        "sha256": "4e0c32ab9ac0f5085971c79b58a0187bca7150931a85299b4a9eb614ddb100c0"
+      },
+      {
+        "path": "docs/MODIFICATIONS.md",
+        "bytes": 4532,
+        "sha256": "edd7ee599bd61c2452f88b0f5f41f4247a10a61164f68ca844f13bd4822b300c"
+      },
+      {
+        "path": "NOTICE",
+        "bytes": 1930,
+        "sha256": "15427272eb4d1ae64d1aec181b4d01c6eeaf65998f3872adb71a3b9b28359bb3"
+      },
+      {
+        "path": "windows/LISEZ-MOI-WINDOWS-V52.txt",
+        "bytes": 4144,
+        "sha256": "45c56128949db46ecaad2e3ecf1155cfa89e81789f8ddfdc2e4895b6a6a0c700"
+      },
+      {
+        "path": "macos/README.md",
+        "bytes": 2590,
+        "sha256": "d71f458e21aaae67854d350e45146275fd9918f3342db86f64d4bf47ca8e4240"
+      },
+      {
+        "path": "firmware/LISEZ-MOI.txt",
+        "bytes": 1874,
+        "sha256": "593369667e90db4eab579c99199edabf03e21ebe5db0b2a2659e5e056102a0a8"
+      },
+      {
+        "path": "README.md",
+        "bytes": 5884,
+        "sha256": "622d299f64562a88bb0a79a97c5ee73e70cb452b72d21713cbf74979f825aef5"
+      },
+      {
+        "path": "docs/VALIDATION-2026-10-08.md",
+        "bytes": 3120,
+        "sha256": "957005bb3b82536f5fd0ea415fe81ecead27a87ffdbec0d5cbd3409eb6b54f1b"
       }
     ]
   }
