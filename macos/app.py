@@ -45,7 +45,13 @@ def check_basic(source):
         raise ValueError("Le fichier BASIC est vide")
 
 
-def encode_basic(path):
+def encode_basic(path, *, compatible=False):
+    """Create a PC-1403 TAP; compatible mode omits bin2wav --name.
+
+    Physical CLOAD acquisition of named cassettes failed on two independent
+    interfaces, while a nameless cassette loaded successfully in October 2026.
+    Keep the named format available for A/B diagnostics.
+    """
     source = Path(path).read_text(encoding="utf-8-sig")
     check_basic(source)
     name = re.sub("[^A-Z0-9]", "", Path(path).stem.upper())[:7] or "PROGRAM"
@@ -53,9 +59,15 @@ def encode_basic(path):
         work = Path(folder)
         (work / "source.bas").write_text(source, encoding="utf-8")
         run_tool(["bas2img", "--pc=1403", "source.bas", "program.img"], folder)
-        run_tool(["bin2wav", "--pc=1403", "--tap", f"--name={name}",
-                  "program.img", "program.tap"], folder)
-        return (work / "program.tap").read_bytes()
+        args = ["bin2wav", "--pc=1403", "--tap"]
+        if not compatible:
+            args.append(f"--name={name}")
+        args.extend(["program.img", "program.tap"])
+        run_tool(args, folder)
+        tape = (work / "program.tap").read_bytes()
+        if len(tape) < 10 or tape[0] not in (0x70, 0x72):
+            raise RuntimeError("Invalid PC-1403 BASIC cassette header")
+        return tape
 
 
 def decode_basic(tape):
@@ -85,6 +97,7 @@ class Application:
         self.driver = Driver(lambda kind, data: self.events.put((kind, data)))
         self.busy = False
         self.port = tk.StringVar()
+        self.compatible_cload = tk.BooleanVar(value=True)
         top = ttk.Frame(self.root, padding=12)
         top.pack(fill="x")
         ttk.Label(top, text="Port FTDI").pack(side="left")
@@ -98,6 +111,7 @@ class Application:
         row.pack(fill="x")
         ttk.Button(row, text="Envoyer .tap", command=self.send_tap).pack(side="left")
         ttk.Button(row, text="Envoyer BASIC .bas", command=self.send_basic).pack(side="left", padx=8)
+        ttk.Checkbutton(self.root, text="CLOAD compatible (sans nom)", variable=self.compatible_cload).pack(anchor="w", padx=12, pady=(3, 2))
         ttk.Button(row, text="Recevoir CSAVE", command=self.receive).pack(side="left")
         ttk.Label(self.root, text="Journal et sortie LPRINT", padding=(12, 12, 12, 2)).pack(anchor="w")
         self.output = tk.Text(self.root, wrap="word", state="disabled")
@@ -135,7 +149,8 @@ class Application:
     def send_basic(self):
         path = filedialog.askopenfilename(filetypes=[("Programme BASIC", "*.bas")])
         if path:
-            self.confirm_send(lambda: encode_basic(path))
+            compatible = self.compatible_cload.get()
+            self.confirm_send(lambda: encode_basic(path, compatible=compatible))
 
     def confirm_send(self, get_bytes):
         if self.busy:
@@ -145,6 +160,10 @@ class Application:
         except Exception as exc:
             messagebox.showerror("Conversion", str(exc))
             return
+        if len(tape) < 10 or tape[0] not in (0x70, 0x72, 0x71, 0x73):
+            messagebox.showerror("TAP", "Invalid Sharp cassette header")
+            return
+        self.append(f"TAP prêt: {len(tape)} octets/bytes ; header: {tape[:10].hex(' ')}\n")
         if messagebox.askokcancel("Chargement du PC-1403",
                                   "Sur le Sharp en mode RUN, lance CLOAD puis appuie sur OK pour envoyer."):
             self.start("send", tape)

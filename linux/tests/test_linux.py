@@ -98,6 +98,64 @@ class LinuxTests(unittest.TestCase):
         expected = [line.strip() for line in source_path.read_text().splitlines() if line.strip()]
         self.assertEqual([line.strip() for line in decoded.splitlines() if line.strip()], expected)
 
+    def test_cload_compat_header_preserves_basic(self):
+        """Unnamed cassette: a header variant, not modified BASIC contents."""
+        source = LINUX.parent / "examples/basic/BONJOUR.bas"
+        named = encode_basic(source, compatible=False)
+        compat = encode_basic(source, compatible=True)
+        self.assertEqual(len(named), len(compat))
+        self.assertEqual(named[0], 0x70)
+        self.assertEqual(compat[0], 0x70)
+        self.assertNotEqual(named[1:8], compat[1:8])
+        self.assertEqual(named[10:], compat[10:])
+        self.assertEqual(decode_basic(named), decode_basic(compat))
+
+    def test_disk_command8_consumed_without_corrupting_lprint(self):
+        """SOH/8 is framed CE140F traffic, not an unknown Arduino command.
+
+        The Arduino waits for a proper SOH/8 response; replying NAK/3 to
+        its outbound frame corrupts the channel and can cause Sharp ERROR 8.
+        No virtual disk is configured: unsupported disk actions receive a
+        negative result, while subsequent LPRINT bytes must still arrive.
+        """
+        def script(peer):
+            peer.connect()
+            time.sleep(.15)
+            peer.write([SOH, 3, 0x41])  # CE-140F device selected by Sharp
+            peer.write([SOH, 8, STX, DLE, NAK, 0x02,
+                        DLE, ETX, DLE, CAN, ETX])
+            # Negative CE140F response, not generic NAK/3:
+            peer.expect(bytes([SOH, 8, 0, 1, 0]))
+            peer.write([ACK])
+            peer.expect(bytes([0xFF]))
+            peer.write([ACK])
+            # Ensure idle LPRINT remains synchronized after Disk frame.
+            for ch in b"HELLO\r":
+                peer.write([SOH, 4, ch])
+                time.sleep(.015)
+            peer.expect(bytes([CAN]))
+
+        self.make_driver(script)
+        printed = ""
+        logs = []
+        deadline = time.monotonic() + 4
+        while len(printed) < 6 and time.monotonic() < deadline:
+            if self.peer.errors:
+                raise self.peer.errors[0]
+            try:
+                kind, value = self.events.get(timeout=.1)
+            except queue.Empty:
+                continue
+            if kind == "print":
+                printed += value
+            elif kind == "log":
+                logs.append(value)
+            elif kind == "error":
+                self.fail(value)
+        self.assertEqual(printed, "HELLO\n")
+        self.assertTrue(any("CE-140F" in s and "15" in s for s in logs))
+        self.assertTrue(any("0x41" in s for s in logs))
+
     def make_driver(self, script):
         self.peer = FirmwarePeer(script)
         self.events = queue.Queue()

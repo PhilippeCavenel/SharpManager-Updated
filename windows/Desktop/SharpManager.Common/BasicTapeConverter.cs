@@ -16,7 +16,8 @@ namespace SharpManager;
 public static class BasicTapeConverter
 {
     public static async Task<byte[]> ConvertAsync(string sourcePath, string toolsDirectory,
-        Action<string>? log = null, CancellationToken cancellationToken = default)
+        Action<string>? log = null, CancellationToken cancellationToken = default,
+        bool compatibleCload = false)
     {
         // Check the complete bundle before doing any work or starting a serial transfer.
         string tokenizer = Path.Combine(toolsDirectory, "bas2img.exe");
@@ -38,9 +39,12 @@ public static class BasicTapeConverter
                 source, new UTF8Encoding(false), cancellationToken);
             await RunToolAsync(tokenizer, workDirectory,
                 new[] { "--pc=1403", "source.bas", "program.img" }, log, cancellationToken);
-            await RunToolAsync(encoder, workDirectory,
-                new[] { "--pc=1403", "--tap", "--name=" + GetTapeName(sourcePath), "program.img", "program.tap" },
-                log, cancellationToken);
+            // Nameless cassette fixes a confirmed PC-1403 CLOAD acquisition
+            // issue on some Arduino/FTDI setups. Named mode remains available.
+            string[] encoderArgs = compatibleCload
+                ? new[] { "--pc=1403", "--tap", "program.img", "program.tap" }
+                : new[] { "--pc=1403", "--tap", "--name=" + GetTapeName(sourcePath), "program.img", "program.tap" };
+            await RunToolAsync(encoder, workDirectory, encoderArgs, log, cancellationToken);
             byte[] tape = await File.ReadAllBytesAsync(Path.Combine(workDirectory, "program.tap"), cancellationToken);
             // The unchanged Arduino protocol carries the length as an unsigned 16-bit word.
             if (tape.Length < 10 || tape.Length > ushort.MaxValue)

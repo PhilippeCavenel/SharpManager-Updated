@@ -1,0 +1,59 @@
+# PC-1403 CLOAD / LPRINT serial diagnostics (October 2026)
+
+## Observed physical results
+
+- On Philippe's PC-1403, testLprint.bas loads when BASIC cassette
+  conversion omits the bin2wav --name option. The checkbox
+  "CLOAD compatible (sans nom)" is enabled by default.
+- During program execution, macOS reports
+  "Commande Arduino non prise en charge : 8" and the Sharp displays
+  ERROR 8. A Linux/Nano USB-C user reported the same command message.
+- It is NOT confirmed yet that the new host-side disk response eliminates
+  the physical Sharp error. A real-hardware retest is necessary.
+
+## Code-level diagnosis
+
+Arduino firmware Manager.ino version 1.3 uses:
+
+| Serial packet | Meaning |
+| --- | --- |
+| SOH 03 <device> | Device Select; value 0x41 initiates disk capture |
+| SOH 04 <character> | LPRINT/printer character |
+| SOH 08 STX ... ETX | CE-140F disk command (not a printer character) |
+
+The previous Mac/Linux idle readers treated 8 as unknown, wrote NAK/03,
+and left the unread STX/payload/ETX in the serial stream. This could
+interrupt an active transaction.
+
+The updated code now consumes the entire framed disk request with DLE
+unescaping, logging the device and disk opcode. It sends the expected
+Arduino disk-response envelope (SOH/08, capture flag, 16-bit length,
+then 64-byte ACK-checked blocks). Since no virtual drive is configured
+on Mac/Linux, it returns a negative CE-140F operation result, or an
+empty FILES listing. It does not silently write host files.
+
+IMPORTANT: This is safe frame handling, NOT full CE-140F emulation.
+If the Sharp selects device 0x41 unexpectedly in an LPRINT command,
+the physical ERROR 8 may remain. The new logs will distinguish these.
+
+## Real device regression
+
+1. Close the prior application and rebuild the latest Mac version.
+2. Connect FTDI/Arduino and Ping; record the firmware identification.
+3. Keep the nameless BASIC CLOAD compatibility checkbox enabled.
+4. On the real PC-1403 run CLOAD and send testLprint.bas (in examples).
+   Confirm that the asterisk appears and the program loads.
+5. Test a tiny BASIC program: 10 LPRINT "OK" / 20 END, and run it.
+6. Run testLprint.bas, recording the full LPRINT log until failure.
+7. In the log, inspect "Sharp device selected: 0xXX", "CE-140F: 0xXX",
+   "CE-140F response", and printed lines. Record any Sharp ERROR 8.
+
+No Arduino firmware change or reflashing is required for this host patch.
+
+## Scope of automated validation
+
+Linux pseudo-terminal integration tests emulate CE-140F command 8 with
+DLE escaping and handshake ACKs, followed by regular LPRINT characters.
+Tests also compare named and nameless BASIC tapes, showing unchanged
+tokenized program data. They do NOT reproduce electrical timing on the
+Sharp expansion connector.

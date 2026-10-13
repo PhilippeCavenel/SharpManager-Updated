@@ -107,9 +107,13 @@ namespace SharpManager.Views
             try
             {
                 Log.AppendText($"Préparation BASIC PC-1403 : {dialog.FileName}\r\n");
+                bool compatibleCload = CloadCompatibilityCheck.IsChecked == true;
                 byte[] tape = await BasicTapeConverter.ConvertAsync(dialog.FileName,
                     System.IO.Path.Combine(AppContext.BaseDirectory, "PocketTools"),
-                    text => Dispatcher.Invoke(() => Log.AppendText(text + "\r\n")));
+                    text => Dispatcher.Invoke(() => Log.AppendText(text + "\r\n")),
+                    compatibleCload: compatibleCload);
+                Log.AppendText($"CLOAD mode: {(compatibleCload ? "sans nom" : "avec nom")}; " +
+                               $"TAP {tape.Length} octets, entête {Convert.ToHexString(tape.AsSpan(0, Math.Min(10, tape.Length)))}\r\n");
                 ConnectionToolbar.IsEnabled = true;
                 // Conversion is finished before asking the user to start reception;
                 // the Sharp therefore never waits while the converter is still running.
