@@ -156,6 +156,88 @@ class LinuxTests(unittest.TestCase):
         self.assertTrue(any("CE-140F" in s and "15" in s for s in logs))
         self.assertTrue(any("0x41" in s for s in logs))
 
+    def test_pc1403_exact_close_all_trace_and_lprint_controls(self):
+        """Physical trace: 0x0F printer, 0x41 disk, frame 04 FF 03.
+
+        No virtual drive is installed. CLOSE ALL must still return success,
+        exactly as Windows CE140F.CommandClose(0xFF) does. SI/SO control
+        characters must not turn into visible garbage in the print window.
+        """
+        def script(peer):
+            peer.connect()
+            peer.write([SOH, 3, 0x0F])
+            for value in (0x0F, ord("O"), ord("K"), 0x0E, 13):
+                peer.write([SOH, 4, value])
+                time.sleep(.01)
+            peer.write([SOH, 3, 0x41])
+            peer.write([SOH, 8, STX, 0x04, 0xFF, 0x03, ETX])
+            peer.expect(bytes([SOH, 8, 0, 1, 0]))
+            peer.write([ACK])
+            peer.expect(bytes([0x00]))  # SUCCESS, not the earlier 0xFF
+            peer.write([ACK])
+            peer.expect(bytes([CAN]))
+
+        self.make_driver(script)
+        printed, logs = "", []
+        deadline = time.monotonic() + 5
+        while time.monotonic() < deadline:
+            if self.peer.errors:
+                raise self.peer.errors[0]
+            try:
+                kind, value = self.events.get(timeout=.1)
+            except queue.Empty:
+                continue
+            if kind == "print":
+                printed += value
+            if kind == "log":
+                logs.append(value)
+            if kind == "error":
+                self.fail(value)
+            if "OK" in printed and "CE-140F response: 00" in logs:
+                break
+        self.assertEqual(printed, "OK\n")
+        self.assertIn("CE-140F response: 00; no virtual drive", logs)
+        self.assertTrue(any("CLOSE ALL" in entry for entry in logs))
+        self.assertTrue(any("device selected: 0x0F" in entry for entry in logs))
+        self.assertTrue(any("device selected: 0x41" in entry for entry in logs))
+        self.assertTrue(any("LPRINT control SI" in entry for entry in logs))
+        self.assertTrue(any("LPRINT control SO" in entry for entry in logs))
+        self.action("disconnect")
+        self.peer.thread.join(1)
+        self.assertFalse(self.peer.errors)
+
+    def test_malformed_close_all_is_not_implicitly_accepted(self):
+        """Only a proper checksum 04+FF=03 is acknowledged as CLOSE ALL."""
+        def script(peer):
+            peer.connect()
+            peer.write([SOH, 8, STX, 0x04, 0xFF, 0x04, ETX])
+            peer.expect(bytes([SOH, 8, 0, 1, 0]))
+            peer.write([ACK])
+            peer.expect(bytes([0xFF]))
+            peer.write([ACK])
+            peer.expect(bytes([CAN]))
+
+        self.make_driver(script)
+        logs = []
+        deadline = time.monotonic() + 4
+        while time.monotonic() < deadline:
+            if self.peer.errors:
+                raise self.peer.errors[0]
+            try:
+                kind, value = self.events.get(timeout=.1)
+            except queue.Empty:
+                continue
+            if kind == "log":
+                logs.append(value)
+                if "CE-140F response" in value:
+                    break
+            if kind == "error":
+                self.fail(value)
+        self.assertTrue(any("CE-140F response: ff" in x for x in logs), logs)
+        self.action("disconnect")
+        self.peer.thread.join(1)
+        self.assertFalse(self.peer.errors)
+
     def make_driver(self, script):
         self.peer = FirmwarePeer(script)
         self.events = queue.Queue()
