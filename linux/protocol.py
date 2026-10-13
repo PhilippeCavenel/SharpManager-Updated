@@ -154,6 +154,7 @@ class Driver:
             raise
 
     def _disconnect(self):
+        self._printer_raw.clear()  # avoid stale LPRINT bytes after reconnect
         if self.serial is not None:
             try:
                 self._write((CAN,))
