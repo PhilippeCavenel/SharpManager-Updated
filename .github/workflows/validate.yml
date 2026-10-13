@@ -64,10 +64,9 @@ jobs:
         working-directory: windows
         run: |
           dotnet run --project tests/BasicConversion/BasicConversion.csproj -- "Desktop/SharpManager/PocketTools"
-      - name: Check exe exists
+      - name: Verify published Windows executable
         shell: pwsh
         run: |
           if (!(Test-Path "windows/publish-windows/SharpManagerBasicPc1403.exe")) {
-            Write-Host "Produced files:"
-            Get-ChildItem "windows/publish-windows" | Select-Object Name
+            throw "Expected SharpManagerBasicPc1403.exe missing"
           }
