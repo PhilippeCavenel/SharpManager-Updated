@@ -47,6 +47,7 @@
                 </Border.BorderBrush>
                 <StackPanel x:Name="ConnectionToolbar" Orientation="Horizontal" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
                     <Button Margin="4" Content="Envoyer BASIC…" Click="SendBasic_Click" IsEnabled="{Binding CanStartTransfer}" />
+                    <CheckBox x:Name="CloadCompatibilityCheck" Margin="5,4,12,4" VerticalAlignment="Center" Content="CLOAD sans nom" IsChecked="True" ToolTip="Omettre le nom de cassette pour certains PC-1403 ; décochez pour le format historique." />
                     <TextBlock VerticalAlignment="Center" Margin="5,4,0,4">Serial Port:</TextBlock>
                     <ComboBox Margin="4,4,10,4" ItemsSource="{Binding SerialPorts}" SelectedItem="{Binding SelectedSerialPort, Mode=TwoWay}" />
                     <Button Margin="4,4,10,4" Click="Connect_Click" Visibility="{Binding IsDisconnected, Converter={StaticResource BooleanToVisibilityConverter}}">
