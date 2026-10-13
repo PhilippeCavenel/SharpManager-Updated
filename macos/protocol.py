@@ -34,6 +34,7 @@ class Driver:
         self.serial = None
         self.stream_mode = False
         self.commands = queue.Queue()
+        self._printer_raw = bytearray()  # raw bytes for LPRINT diagnosis
         self.alive = True
         self.thread = threading.Thread(target=self._run, daemon=True)
         self.thread.start()
@@ -310,18 +311,25 @@ class Driver:
                 self._write((ACK,))
             elif command == 3:
                 device = self._read(1)
+                if device == 0x41 and self._printer_raw:
+                    # Disk selection partway through printer traffic may
+                    # explain why the calculator displays an error but the
+                    # application shows only a single control character.
+                    self.emit("log", f"LPRINT interrupted: raw {self._printer_raw.hex(' ')}")
+                    self._printer_raw.clear()
                 self.emit("log", f"Sharp device selected: 0x{device:02X}")
             elif command == 4:
                 character = self._read(1)
+                self._printer_raw.append(character)
                 if character in (0x0E, 0x0F):
-                    # Sharp printer shifts use ASCII SO/SI. They are
-                    # control bytes, not printable characters; rendering
-                    # them as glyphs produces the odd symbols seen on Mac.
-                    # Preserve a diagnostic for hardware investigations.
+                    # ASCII SO/SI are printer control bytes, not glyphs.
                     label = "SO" if character == 0x0E else "SI"
                     self.emit("log", f"LPRINT control {label} (0x{character:02X})")
                 else:
                     self.emit("print", "\n" if character == 13 else chr(character))
+                if character in (0x0E, 13) or len(self._printer_raw) >= 128:
+                    self.emit("log", f"LPRINT raw bytes: {self._printer_raw.hex(' ')}")
+                    self._printer_raw.clear()
             elif command == 8:
                 self._disk_request()
             elif command == 5:
