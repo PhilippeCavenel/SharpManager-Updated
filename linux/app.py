@@ -98,6 +98,18 @@ def ports():
     return sorted(found, key=lambda device: (not found[device], device))
 
 
+LPRINT_HEX_LOG_PREFIXES = (
+    "LPRINT raw bytes:",
+    "LPRINT control ",
+    "LPRINT interrupted: raw ",
+)
+
+
+def lprint_log_visible(message, detailed=False):
+    """Hide printer byte-level diagnostics, not actual printer characters."""
+    return detailed or not message.startswith(LPRINT_HEX_LOG_PREFIXES)
+
+
 class Application:
     def __init__(self):
         self.root = tk.Tk()
@@ -108,6 +120,7 @@ class Application:
         self.busy = False
         self.port = tk.StringVar()
         self.compatible_cload = tk.BooleanVar(value=True)
+        self.show_lprint_hex = tk.BooleanVar(value=False)
         top = ttk.Frame(self.root, padding=12)
         top.pack(fill="x")
         ttk.Label(top, text="FTDI port").pack(side="left")
@@ -121,7 +134,12 @@ class Application:
         row.pack(fill="x")
         ttk.Button(row, text="Send .tap", command=self.send_tap).pack(side="left")
         ttk.Button(row, text="Send BASIC .bas", command=self.send_basic).pack(side="left", padx=8)
-        ttk.Checkbutton(self.root, text="Compatible CLOAD (no name)", variable=self.compatible_cload).pack(anchor="w", padx=12, pady=(3, 2))
+        options = ttk.Frame(self.root, padding=(12, 3))
+        options.pack(fill="x")
+        ttk.Checkbutton(options, text="Compatible CLOAD (no name)",
+                        variable=self.compatible_cload).pack(side="left")
+        ttk.Checkbutton(options, text="LPRINT HEX bytes (diagnostics)",
+                        variable=self.show_lprint_hex).pack(side="left", padx=(18, 0))
         ttk.Button(row, text="Receive CSAVE", command=self.receive).pack(side="left")
         ttk.Label(self.root, text="Log and LPRINT output", padding=(12, 12, 12, 2)).pack(anchor="w")
         self.output = tk.Text(self.root, wrap="word", state="disabled")
@@ -216,7 +234,8 @@ class Application:
             while True:
                 kind, value = self.events.get_nowait()
                 if kind == "log":
-                    self.append(value + "\n")
+                    if lprint_log_visible(value, self.show_lprint_hex.get()):
+                        self.append(value + "\n")
                 elif kind == "print":
                     self.append(value)
                 elif kind == "received":

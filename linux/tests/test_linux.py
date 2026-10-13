@@ -80,6 +80,27 @@ class FirmwarePeer:
 
 
 class LinuxTests(unittest.TestCase):
+    def test_lprint_character_dump_converts_to_pc1403_tape(self):
+        """PC-1403 CHR$ renders memory as characters; diagnostics stay separate."""
+        from app import lprint_log_visible
+        original = LINUX.parent / "examples/tests-transfert/testLprint-hex.bas"
+        modified = LINUX.parent / "examples/tests-transfert/testLprint.bas"
+        self.assertIn("HEX (PEEK A)", original.read_text(encoding="utf-8"))
+        self.assertIn("CHR$ X", modified.read_text(encoding="utf-8"))
+        self.assertIn("IF X<32 THEN GOTO 60", modified.read_text(encoding="utf-8"))
+        self.assertIn("IF X>126 THEN GOTO 60", modified.read_text(encoding="utf-8"))
+        tape = encode_basic(modified, compatible=True)
+        self.assertEqual(tape[0], 0x70)
+        decoded = decode_basic(tape)
+        self.assertIn("CHR$", decoded.upper())
+        self.assertIn("LPRINT", decoded.upper())
+        self.assertTrue(lprint_log_visible("LPRINT raw bytes: 41 42", detailed=True))
+        self.assertFalse(lprint_log_visible("LPRINT raw bytes: 41 42"))
+        self.assertFalse(lprint_log_visible("LPRINT control SO (0x0E)"))
+        self.assertFalse(lprint_log_visible("LPRINT interrupted: raw 0f"))
+        self.assertTrue(lprint_log_visible("CE-140F CLOSE ALL (04 FF 03): OK"))
+        self.assertTrue(lprint_log_visible("Printer ready"))
+
     def test_usb_ports_and_ftdi_preference(self):
         devices = [
             SimpleNamespace(device="/dev/ttyACM0", vid=0x2341),

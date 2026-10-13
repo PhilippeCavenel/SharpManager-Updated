@@ -90,3 +90,29 @@ cause the physical calculator to report ERROR 1, not necessarily the original
 hardware LPRINT failure. It does not add a CE-140F filesystem, change
 firmware timing, or prove that the Sharp emits all intended print characters.
 A hardware retest is necessary.
+
+## Character rendering instead of hexadecimal memory values (October 2026)
+
+With the physical PC-1403, CLOAD and LPRINT work. The old test program
+`testLprint.bas` printed `HEX (PEEK A)` and therefore deliberately generated
+text like `E034. - 41.`. That text is NOT a serial decoder failure.
+
+The test file now uses `C$=CHR$ X` for printable byte values
+(decimal 32..126), and `.` for controls, BASIC token bytes and
+other non-ASCII codes (for example 0xFF, 0x00 and 0xA7).
+It keeps the memory address in HEX as a location reference:
+`E034. - A`, `E035. - =`, `E037. - &` and `E038. - F`.
+An unchanged diagnostic copy is available as `testLprint-hex.bas`.
+
+The Mac and Linux apps additionally have an unchecked-by-default
+`LPRINT HEX bytes (diagnostics)` option. Normal printed characters remain
+visible; internal `LPRINT raw bytes`, `LPRINT control SO/SI` and
+`LPRINT interrupted: raw` log entries are hidden unless the option is on.
+This does not modify the FTDI, Arduino firmware, timing or the cassette
+transfer protocol. Critical CE-140F protocol logs and errors remain visible.
+
+On physical hardware: use RUN mode, start `CLOAD`, send the new
+`examples/tests-transfert/testLprint.bas`, then `RUN`. Unlike the old
+program it prints characters instead of their hexadecimal values.
+The graphical Studio's ROM-free BASIC interpreter still does NOT model
+full Sharp PEEK memory mapping, so this example is for the real PC-1403.
