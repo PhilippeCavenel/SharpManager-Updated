@@ -225,6 +225,67 @@ class Driver:
         self.emit("received", tape)
         self.emit("log", f"CSAVE reçu : {len(tape)} octets")
 
+    def _read_disk_frame(self):
+        """Read CE-140F command-8 frame with DLE escaping.
+
+        Firmware sends SOH, 8, STX, data bytes, ETX. The whole frame must
+        be consumed before replying, or NAK can disrupt the Sharp protocol.
+        """
+        start = self._read(2.5)
+        if start == NAK:
+            raise ProtocolError("CE-140F Arduino error " + str(self._read(1)))
+        if start != STX:
+            raise ProtocolError(f"CE-140F: expected STX, got 0x{start:02X}")
+        frame = bytearray()
+        while True:
+            value = self._read(2)
+            if value == ETX:
+                return bytes(frame)
+            if value == DLE:
+                value = self._read(2)
+            elif value == CAN:
+                raise ProtocolError("CE-140F: transmission cancelled")
+            elif value == NAK:
+                raise ProtocolError("CE-140F Arduino error " + str(self._read(1)))
+            frame.append(value)
+            if len(frame) > 8192:
+                raise ProtocolError("CE-140F frame exceeds 8192-byte safety limit")
+
+    def _disk_response(self, data, capture=False):
+        """Reply via Arduino Manager::ProcessDataFrame and 64-byte ACKs."""
+        if len(data) > 65535:
+            raise ProtocolError("CE-140F response exceeds 16-bit length")
+        self._write((SOH, 8, 0xFF if capture else 0,
+                     len(data) & 255, (len(data) >> 8) & 255))
+        self._response(5)
+        for offset in range(0, len(data), 64):
+            self._write(data[offset:offset + 64])
+            self._response(5)
+
+    def _disk_request(self):
+        """Consume a disk frame and return a bounded no-drive result.
+
+        This does not provide CE-140F file I/O. It prevents corrupting the
+        serial protocol with NAK/3, and records command payloads for analysis.
+        """
+        payload = self._read_disk_frame()
+        opcode = payload[0] if payload else None
+        op = f"0x{opcode:02X}" if opcode is not None else "(empty)"
+        self.emit("log", f"CE-140F: {op}, {len(payload)} bytes: {payload[:24].hex(' ')}")
+        if opcode == 0x05:
+            # CE140F CommandFilesInit() with an empty/unconfigured directory.
+            response = b"\x00\x00\x00"
+        elif opcode in (0x03, 0x04, 0x0A, 0x0E, 0x0F, 0x10,
+                        0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
+                        0x17, 0x1D, 0x20):
+            # CE140F CreateResult(false), no directory or open file.
+            response = b"\xff"
+        else:
+            # CE140F ErrorFrame (unknown function).
+            response = b"\xff\x00"
+        self._disk_response(response)
+        self.emit("log", f"CE-140F response: {response.hex(' ')}; no virtual drive")
+
     def _idle(self):
         self.serial.timeout = .08
         raw = self.serial.read(1)
@@ -238,10 +299,13 @@ class Driver:
             if command == 2:
                 self._write((ACK,))
             elif command == 3:
-                self._read(1)  # device select
+                device = self._read(1)
+                self.emit("log", f"Sharp device selected: 0x{device:02X}")
             elif command == 4:
                 character = self._read(1)
                 self.emit("print", "\n" if character == 13 else chr(character))
+            elif command == 8:
+                self._disk_request()
             elif command == 5:
                 self.emit("log", f"Donnée : {self._read(1):02X}")
             else:
