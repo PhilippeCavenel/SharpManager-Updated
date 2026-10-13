@@ -202,6 +202,8 @@ class LinuxTests(unittest.TestCase):
         self.assertTrue(any("device selected: 0x41" in entry for entry in logs))
         self.assertTrue(any("LPRINT control SI" in entry for entry in logs))
         self.assertTrue(any("LPRINT control SO" in entry for entry in logs))
+        self.assertTrue(any("LPRINT raw bytes: 0f 4f 4b 0e" in entry
+                            for entry in logs), logs)
         self.action("disconnect")
         self.peer.thread.join(1)
         self.assertFalse(self.peer.errors)
