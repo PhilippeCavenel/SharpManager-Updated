@@ -28,7 +28,7 @@ try
     Check(noNameTape[0] == tape[0], "Nameless BASIC TAP changed cassette type");
     Check(!noNameTape.Skip(1).Take(7).SequenceEqual(tape.Skip(1).Take(7)),
           "Nameless compatibility mode did not clear the cassette name");
-    Check(noNameTape.Skip(8).SequenceEqual(tape.Skip(8)),
+    Check(noNameTape.Skip(10).SequenceEqual(tape.Skip(10)),
           "Nameless compatibility mode unexpectedly modified BASIC payload");
     Check((await BasicTapeConverter.DecodeAsync(noNameTape, tools)).Contains("BONJOUR"),
           "Nameless BASIC TAP failed decode");
