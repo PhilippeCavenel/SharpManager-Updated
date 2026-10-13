@@ -170,7 +170,7 @@ class LinuxTests(unittest.TestCase):
                 peer.write([SOH, 4, value])
                 time.sleep(.01)
             peer.write([SOH, 3, 0x41])
-            peer.write([SOH, 8, STX, 0x04, 0xFF, 0x03, ETX])
+            peer.write([SOH, 8, STX, 0x04, 0xFF, DLE, ETX, ETX])
             peer.expect(bytes([SOH, 8, 0, 1, 0]))
             peer.write([ACK])
             peer.expect(bytes([0x00]))  # SUCCESS, not the earlier 0xFF
