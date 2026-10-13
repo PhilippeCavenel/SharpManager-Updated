@@ -287,13 +287,23 @@ class Driver:
         opcode = payload[0] if payload else None
         op = f"0x{opcode:02X}" if opcode is not None else "(empty)"
         self.emit("log", f"CE-140F: {op}, {len(payload)} bytes: {payload[:24].hex(' ')}")
-        if opcode == 0x05:
+        if (opcode == 0x04 and len(payload) == 3
+                and payload[1] == 0xFF
+                and (sum(payload[:-1]) & 0xFF) == payload[-1]):
+            # The real PC-1403 sends 04 FF 03 (checksum included) when
+            # closing ALL CE-140F handles, including after LPRINT.
+            # Windows CE140F.CommandClose(0xFF) returns CreateResult(true)
+            # even with no files open. Previously replying FF here caused
+            # a fresh Sharp ERROR 1 after CLOAD was already successful.
+            response = b"\x00"
+            self.emit("log", "CE-140F CLOSE ALL (04 FF 03): OK; no files open")
+        elif opcode == 0x05:
             # CE140F CommandFilesInit() with an empty/unconfigured directory.
             response = b"\x00\x00\x00"
         elif opcode in (0x03, 0x04, 0x0A, 0x0E, 0x0F, 0x10,
                         0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
                         0x17, 0x1D, 0x20):
-            # CE140F CreateResult(false), no directory or open file.
+            # Other CLOSE/file requests are unsupported without a drive.
             response = b"\xff"
         else:
             # CE140F ErrorFrame (unknown function).
@@ -318,7 +328,15 @@ class Driver:
                 self.emit("log", f"Sharp device selected: 0x{device:02X}")
             elif command == 4:
                 character = self._read(1)
-                self.emit("print", "\n" if character == 13 else chr(character))
+                if character in (0x0E, 0x0F):
+                    # Sharp printer shifts use ASCII SO/SI. They are
+                    # control bytes, not printable characters; rendering
+                    # them as glyphs produces the odd symbols seen on Mac.
+                    # Preserve a diagnostic for hardware investigations.
+                    label = "SO" if character == 0x0E else "SI"
+                    self.emit("log", f"LPRINT control {label} (0x{character:02X})")
+                else:
+                    self.emit("print", "\n" if character == 13 else chr(character))
             elif command == 8:
                 self._disk_request()
             elif command == 5:
