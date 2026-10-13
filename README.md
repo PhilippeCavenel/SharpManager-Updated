@@ -12,6 +12,24 @@ This project is based on [SharpManager by Wayne Venables / Codaris](https://gith
 | BASIC and TAP examples: Bonjour, stopwatch, 64/65-byte tests, Queen's Quest | All recovered variants, including the corrected French 8K version | [examples](examples/) |
 | Earlier versions and copies of delivered sources | macOS, Windows and Arduino | [archives](archives/) |
 
+## PC-1403 physical transfer and LPRINT diagnostics (13 October 2026)
+
+The Mac, Linux and Windows transfer frontends now default to **CLOAD compatible
+(sans nom)**: PocketTools omits the cassette `--name` option, which restored
+physical BASIC CLOAD for a reported PC-1403 setup. Uncheck it to generate the
+original named cassette for comparison. The actual BASIC data are unchanged.
+
+The Arduino serial command **8** means CE-140F disk framing, not an LPRINT
+character (printer output is command **4**). Previously the Mac/Linux readers
+rejected command 8 without consuming its frame. They now decode the complete
+DLE-escaped frame, log the selected device and command, and return a valid
+CE-140F envelope indicating no configured virtual disk. This may preserve
+serial synchronization, but **physical ERROR 8 is not yet confirmed fixed**:
+there is no full CE-140F filesystem emulator on Mac/Linux.
+
+See [physical LPRINT regression and diagnosis](docs/CLOAD-LPRINT-COMMAND8.md).
+The original Arduino firmware is unchanged; do not reflash for this patch.
+
 ## Build and use
 
 - **Mac**: read [macos/README.md](macos/README.md), then run `macos/build-macos.command` on macOS arm64 with Python 3 / Tkinter and the Xcode command-line tools.
