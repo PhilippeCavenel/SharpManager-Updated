@@ -122,7 +122,7 @@ class LinuxTests(unittest.TestCase):
             peer.connect()
             time.sleep(.15)
             peer.write([SOH, 3, 0x41])  # CE-140F device selected by Sharp
-            peer.write([SOH, 8, STX, 0x15, 0x02,
+            peer.write([SOH, 8, STX, DLE, NAK, 0x02,
                         DLE, ETX, DLE, CAN, ETX])
             # Negative CE140F response, not generic NAK/3:
             peer.expect(bytes([SOH, 8, 0, 1, 0]))
