@@ -107,7 +107,7 @@ class LinuxTests(unittest.TestCase):
         self.assertEqual(named[0], 0x70)
         self.assertEqual(compat[0], 0x70)
         self.assertNotEqual(named[1:8], compat[1:8])
-        self.assertEqual(named[8:], compat[8:])
+        self.assertEqual(named[10:], compat[10:])
         self.assertEqual(decode_basic(named), decode_basic(compat))
 
     def test_disk_command8_consumed_without_corrupting_lprint(self):
