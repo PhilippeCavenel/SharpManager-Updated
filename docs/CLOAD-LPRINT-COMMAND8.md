@@ -57,3 +57,36 @@ DLE escaping and handshake ACKs, followed by regular LPRINT characters.
 Tests also compare named and nameless BASIC tapes, showing unchanged
 tokenized program data. They do NOT reproduce electrical timing on the
 Sharp expansion connector.
+
+## Additional physical trace: ERROR 1 during LPRINT (13 October 2026)
+
+The user's next test showed:
+
+    Sharp device selected: 0x0F
+    [LPRINT SI/SO control characters; some visible 0.]
+    Sharp device selected: 0x41
+    CE-140F: 0x04, 3 bytes: 04 ff 03
+    CE-140F response: ff; no virtual drive
+
+The packet is **CLOSE ALL**:
+- 0x04 = CE-140F file CLOSE
+- 0xFF = all file handles
+- 0x03 = (0x04 + 0xFF) & 0xFF checksum.
+
+The previous no-drive CE140F fallback incorrectly returned FF (error) to
+this perfectly valid close-all operation. The Windows CE140F implementation
+calls CommandClose(0xFF), always returning CreateResult(true), one byte 00.
+The Mac and Linux implementations now match that behavior exactly, after
+validating the three-byte frame and its checksum.
+
+The host additionally strips printer formatting bytes 0x0F (SI) and 0x0E
+(SO) from the visible output and records their hex values. Each complete
+LPRINT record writes a "LPRINT raw bytes" diagnostic. If device 0x41 is
+selected before a printer record completes, the program logs "LPRINT
+interrupted" with the raw bytes collected so far.
+
+**Important limits:** This addresses one known host response error that can
+cause the physical calculator to report ERROR 1, not necessarily the original
+hardware LPRINT failure. It does not add a CE-140F filesystem, change
+firmware timing, or prove that the Sharp emits all intended print characters.
+A hardware retest is necessary.
