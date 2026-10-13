@@ -193,7 +193,7 @@ class LinuxTests(unittest.TestCase):
                 logs.append(value)
             if kind == "error":
                 self.fail(value)
-            if "OK" in printed and "CE-140F response: 00" in logs:
+            if "OK" in printed and any("CE-140F response: 00" in x for x in logs):
                 break
         self.assertEqual(printed, "OK\n")
         self.assertIn("CE-140F response: 00; no virtual drive", logs)
